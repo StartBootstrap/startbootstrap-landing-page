@@ -1,2 +1,2 @@
-startbootstrap-landing-page
-===========================
+Start Bootstrap - Landing Page
+=========
