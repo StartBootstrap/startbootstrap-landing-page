@@ -21,6 +21,10 @@ h6 {
     font-weight: 700;
 }
 
+.topnav {
+    font-size: 14px; 
+}
+
 .lead {
     font-size: 18px;
     font-weight: 400;
