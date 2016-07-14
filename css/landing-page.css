@@ -163,6 +163,9 @@ h6 {
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 p.copyright {
