@@ -138,9 +138,8 @@ p.copyright {
     border-radius: 50%;
     width: 50%;
     height: 50%;
-    margin-left: 20%;
+    margin: 0 auto;
 }
-
 
 
 .content-section-a {
@@ -156,6 +155,7 @@ p.copyright {
 
 .section-heading {
     margin-bottom: 30px;
+    color: rgb(255,45,0);
 }
 
 .section-heading-spacer {
@@ -164,11 +164,13 @@ p.copyright {
     border-top: 3px solid #e7e7e7;
 }
 
+.section-subheading {
+    color: rgb(255,140,0);
+}
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
-    background-size: cover;
+    background: rgba(255,140,0, 0.6);
 }
 .banner img {
     float: left;
