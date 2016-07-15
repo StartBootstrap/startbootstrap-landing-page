@@ -26,12 +26,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-weight: 700;
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
+    background-color:  
 }
 
 .lead {
@@ -84,6 +85,7 @@ h6 {
     border-radius: 3%;
     width: 100%;
     height: 100%;
+    margin-top: 40%;
 }
 #home {
     content:"\e007";
@@ -165,7 +167,7 @@ p.copyright {
 }
 
 .section-subheading {
-    color: rgb(255,140,0);
+    color: rgba(255,140,0, 0.8);
 }
 .banner {
     padding: 100px 0;
