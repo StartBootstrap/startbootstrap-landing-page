@@ -29,10 +29,12 @@ h6 {
     font-family: "Josefin Sans", sans-serif;
     font-weight: 700;
 }
-
+.topnav1 {
+    border-bottom: 3px solid grey;
+    background: rgba(255,140,0, 0.9); 
+}
 .topnav {
     font-size: 14px;
-    background-color:  
 }
 
 .lead {
@@ -85,12 +87,18 @@ h6 {
     border-radius: 3%;
     width: 100%;
     height: 100%;
-    margin-top: 40%;
+    margin-top: 25%;
+}
+#shrink {
+    height: 300px;
 }
 #home {
     content:"\e007";
 }
-
+.links {
+    color: rgb(4,117,111);
+    font-style: bold;
+}
 @media(max-width:767px) {
     .intro-message {
         padding-bottom: 15%;
@@ -125,6 +133,7 @@ h6 {
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;
+    
 }
 
 p.copyright {
@@ -156,7 +165,7 @@ p.copyright {
 }
 
 .section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: rgb(255,45,0);
 }
 
@@ -168,11 +177,12 @@ p.copyright {
 
 .section-subheading {
     color: rgba(255,140,0, 0.8);
+    margin-bottom: 30px;
 }
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: rgba(255,140,0, 0.6);
+
 }
 .banner img {
     float: left;

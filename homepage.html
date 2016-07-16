@@ -31,7 +31,7 @@
 
 <body>
 <!-- navigation -->
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top topnav1" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -47,16 +47,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about">About Me</a>
+                        <a class="links" href="#about">About Me</a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a class="links" href="#projects">Projects</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a class="links" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="articles/index">Blog</a>
+                        <a class="links" href="articles/index">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -111,7 +111,7 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">ABOUT ME</h2><h4 class="section-subheading">Hello World! I'm Megan, a New York-based full-stack web dev.</h4>
                     <p class="lead"> Throughout my career I have developed experience leading projects in a variety 
-of industries including education, non-profits and the arts. I have experience leading projects in a variety of industries including education, non-profits and the arts. With my diverse set of technical skills, ranging from Ruby on Rails and JavaScript to HTML + CSS, relational databases and APIs, I have built beautiful and meaningful apps. I'm always interested in hearing from others about your thoughts on my site and projects. Please take a look!</p>
+of industries including education, non-profits and the arts. With my diverse set of technical skills, ranging from Ruby on Rails and JavaScript to HTML + CSS, relational databases and APIs, I have built beautiful and meaningful apps. I'm always interested in hearing from others about your thoughts on my site and projects. Please take a look!</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <img class="img-responsive" src="img/banner-city.jpg" alt="">
@@ -134,10 +134,10 @@ of industries including education, non-profits and the arts. I have experience l
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Projects</h2><h4 class="section-subheading">The best way to predict the future is to invent it!</h4>
-                    <p class="lead"><a target="_blank" href="https://github.com/NYCSwan">Preview my projects</a> like the <a href="https://github.com/NYCSwan/LESFilmFest"><strong>LES Film Festival</strong></a> or a Taste of Home, which showcase my skills and interest in a range of topics from film to food. I love Ruby and am psyched to be teaching myself node.js and swift! The apps are written in Ruby on Rails, JavaScript, and a variety of frameworks using Rest APIs.</p>
+                    <p class="lead"><a class="links" target="_blank" href="https://github.com/NYCSwan">Preview my projects</a> like the <a class="links" target="_blank" href="https://github.com/NYCSwan/LESFilmFest"><strong>LES Film Festival</strong></a> or a Taste of Home, which showcase my skills and interest in a range of topics from film to food. I love Ruby and am psyched to be teaching myself node.js and swift! The apps are written in Ruby on Rails, JavaScript, and a variety of frameworks using Rest APIs.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/LES.png" alt="">
+                    <img class="img-responsive" id="shrink" src="img/LES.png" alt="">
                 </div>
             </div>
 
@@ -156,7 +156,7 @@ of industries including education, non-profits and the arts. I have experience l
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Resume</h2><h4 class="section-subheading">Dynamic, creative and experienced professional</h4>
-                    <p class="lead"><a target="_blank" href="https://resume.creddle.io/resume/h0ywn3degjs">Consider my experiences</a> using agile workflow and TDD to build meaningful apps, as well as problem solving some of life's big questions in education, non-profits and the arts.</p>
+                    <p class="lead"><a class="links" target="_blank" href="https://resume.creddle.io/resume/h0ywn3degjs">Consider my experiences</a> using agile workflow and TDD to build meaningful apps, as well as problem solving some of life's big questions in education, non-profits and the arts.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <img class="img-responsive" src="img/office-setup.jpg" alt="">
@@ -176,10 +176,11 @@ of industries including education, non-profits and the arts. I have experience l
 
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-2 col-sm-6">
+                    <div class="col-lg-10 col-lg-offset-2 col-sm-10 ">
                     <img class="me" src="img/me.jpg">
                 </div>
-                    <div class="col-lg-12 col-sm-12 ">
-                        <ul class="list-inline banner-social-buttons"><h2 class="list-inline">Connect:</h2>
+                        <ul class="list-inline banner-social-buttons">
+                        <h2 class="list-inline">Connect:</h2>
                             <li>
                                 <!-- Email form to pop out from button -->
                                 <a href="#" class="btn btn-default btn-md" class="fa fa-email fa-fw"></i> <span class="glyphicon glyphicon-envelope network-name"> Email</span></a>
