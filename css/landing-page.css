@@ -22,7 +22,7 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -35,7 +35,8 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    /* background: url(../img/laptop-notebook.jpg) no-repeat center center; */
+    background: url(../img/med-light.jpeg) no-repeat center center;
     background-size: cover;
 }
 
@@ -47,7 +48,7 @@ h6 {
 
 .intro-message > h1 {
     margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    text-shadow: 6px 6px 3px rgba(0,0,0,0.6);
     font-size: 5em;
 }
 
@@ -116,7 +117,7 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background: url(../img/coffee.jpg) no-repeat center center;
     background-size: cover;
 }
 
