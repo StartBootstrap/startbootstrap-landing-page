@@ -1,9 +1,18 @@
 /*
- * Start Bootstrap - Landing Page (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
  */
-
 body,
 html {
     width: 100%;
@@ -17,12 +26,15 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-weight: 700;
 }
-
+.topnav1 {
+    border-bottom: 3px solid grey;
+    background: rgba(255,140,0, 0.9); 
+}
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -35,7 +47,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background: url(../img/computer-fruit.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -43,8 +55,16 @@ h6 {
     position: relative;
     padding-top: 20%;
     padding-bottom: 20%;
+    
 }
-
+.intro-standout {
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
 .intro-message > h1 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
@@ -61,6 +81,24 @@ h6 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
+.img-responsive {
+    border:solid 15px black;
+    background-color:grey;
+    border-radius: 3%;
+    width: 100%;
+    height: 100%;
+    margin-top: 25%;
+}
+#shrink {
+    height: 300px;
+}
+#home {
+    content:"\e007";
+}
+.links {
+    color: rgb(4,117,111);
+    font-style: bold;
+}
 @media(max-width:767px) {
     .intro-message {
         padding-bottom: 15%;
@@ -92,6 +130,29 @@ h6 {
     letter-spacing: 2px;
 }
 
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.center-this {
+    margin-left: 40%;
+}
+
+.me {
+    border:solid 6px grey;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+}
+
+
 .content-section-a {
     padding: 50px 0;
     background-color: #f8f8f8;
@@ -104,7 +165,8 @@ h6 {
 }
 
 .section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    color: rgb(255,45,0);
 }
 
 .section-heading-spacer {
@@ -113,13 +175,18 @@ h6 {
     border-top: 3px solid #e7e7e7;
 }
 
+.section-subheading {
+    color: rgba(255,140,0, 0.8);
+    margin-bottom: 30px;
+}
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
-    background-size: cover;
-}
 
+}
+.banner img {
+    float: left;
+}
 .banner h2 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
@@ -160,11 +227,3 @@ h6 {
     }
 }
 
-footer {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-p.copyright {
-    margin: 15px 0 0;
-}
