@@ -1,0 +1,15 @@
+{
+    "name": "startbootstrap-landing-page",
+    "title": "Landing Page",
+    "version": "3.3.7",
+    "homepage": "http://startbootstrap.com/template-overviews/landing-page",
+    "author": "Start Bootstrap",
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-landing-page.git"
+    }
+}

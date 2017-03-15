@@ -1,6 +1,6 @@
 /*
  * Start Bootstrap - Landing Page (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
+ * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
@@ -21,17 +21,8 @@ h6 {
     font-weight: 700;
 }
 
-.topnav {
-    font-size: 14px; 
-}
-
-.lead {
-    font-size: 18px;
-    font-weight: 400;
-}
-
 .intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
