@@ -56,7 +56,7 @@
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn2();">
+              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn3();">
                 <i class="fa fa-twitter fa-fw"></i>
                 <span class="network-name">Twitter</span>
               </a>
@@ -78,110 +78,7 @@
       </div>
     </header>
 
-    <!-- Page Content -->
-    <!--<section class="content-section-a">
-
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 ml-auto">
-            <hr class="section-heading-spacer">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-            <p class="lead">A special thanks to
-              <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>
-              for providing the photographs that you see in this template. Visit their website to become a member.</p>
-          </div>
-          <div class="col-lg-5 mr-auto">
-            <img class="img-fluid" src="img/ipad.png" alt="">
-          </div>
-        </div>
-
-      </div>
-      /.container -->
-    <!--</section>
-
-    <section class="content-section-b">
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-5 mr-auto order-lg-2">
-            <hr class="section-heading-spacer">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-            <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by
-              <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-          </div>
-          <div class="col-lg-5 ml-auto order-lg-1">
-            <img class="img-fluid" src="img/dog.png" alt="">
-          </div>
-        </div>
-
-      </div>
-      /.container -->
-
-    <!--</section>
-    /.content-section-b 
-
-    <section class="content-section-a">
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-5 ml-auto">
-            <hr class="section-heading-spacer">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-            <p class="lead">This template features the 'Lato' font, part of the
-              <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as
-              <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-          </div>
-          <div class="col-lg-5 mr-auto ">
-            <img class="img-fluid" src="img/phones.png" alt="">
-          </div>
-        </div>
-
-      </div>
-      /.container -->
-
-    
-    <!-- /.content-section-a -->
-    <!--</section>
-    <aside class="banner">
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-6 my-auto">
-            <h2>Connect to Start Bootstrap:</h2>
-          </div>
-          <div class="col-lg-6 my-auto">
-            <ul class="list-inline banner-social-buttons">
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-github fa-fw"></i>
-                  <span class="network-name">Github</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-linkedin fa-fw"></i>
-                  <span class="network-name">Linkedin</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-       /.container -->
-
+ 
     </aside>
     <!-- /.banner -->
 
@@ -190,11 +87,11 @@
       <div class="container">
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="#">Home</a>
+            <a style ="color:#868e96" href="#">Home</a>
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#about">About</a>
+            <a style ="color:#868e96" href="#about">About</a>
           </li>
           <!--<li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
@@ -202,7 +99,7 @@
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#contact">Contact</a>
+            <a style ="color:#868e96" href="#contact">Contact</a>
           </li>
         </ul>
         <p class="copyright text-muted small">Copyright &copy; Pause 2017. All Rights Reserved</p>
@@ -257,16 +154,14 @@
     https://pause-fb19e.firebaseapp.com/__/auth/handler
     <script>
       var provider2 = new firebase.auth.FacebookAuthProvider();
-      firebase.auth().signInWithRedirect(provider2);
+      //firebase.auth().signInWithRedirect(provider2);
       function signIn2(){
-                  firebase.auth().getRedirectResult().then(function(result) {
-            if (result.credential) {
-              // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-              var token = result.credential.accessToken;
-              // ...
-            }
+            firebase.auth().signInWithPopup(provider2).then(function(result) {
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
             // The signed-in user info.
             var user = result.user;
+            // ...
           }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -282,30 +177,27 @@
 
 
     <script>
-      var provider3 = new firebase.auth.TwitterAuthProvider();
+      var provide3 = new firebase.auth.TwitterAuthProvider();
       function signIn3(){
-      firebase.auth().signInWithRedirect(provider)3;
-
-        firebase.auth().getRedirectResult().then(function(result) {
-  if (result.credential) {
-    // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
-    // You can use these server side with your app's credentials to access the Twitter API.
-    var token = result.credential.accessToken;
-    var secret = result.credential.secret;
-    // ...
-  }
-  // The signed-in user info.
-  var user = result.user;
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-});
+          firebase.auth().signInWithPopup(provide3).then(function(result) {
+          // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+          // You can use these server side with your app's credentials to access the Twitter API.
+          var token = result.credential.accessToken;
+          var secret = result.credential.secret;
+          // The signed-in user info.
+          var user = result.user;
+          // ...
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
+      }
     </script>
   </body>
 
