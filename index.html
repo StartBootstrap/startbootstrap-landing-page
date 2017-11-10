@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Pause!!!</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Pause</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,9 +36,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link" href="#">Services</a>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
@@ -51,26 +51,26 @@
     <header class="intro-header">
       <div class="container">
         <div class="intro-message">
-          <h1>Landing Page</h1>
-          <h3>A Template by Start Bootstrap</h3>
+          <h1>Pause Login</h1>
+          <h6>Begin your Journey</h6>
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
+              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn2();">
                 <i class="fa fa-twitter fa-fw"></i>
                 <span class="network-name">Twitter</span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-github fa-fw"></i>
-                <span class="network-name">Github</span>
+              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn2();" >
+                <i class="fa fa-facebook fa-fw"></i>
+                <span class="network-name">Facebook</span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-linkedin fa-fw"></i>
-                <span class="network-name">Linkedin</span>
+              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn();">
+                <i class="fa fa-google fa-fw"></i>
+                <span class="network-name">Google</span>
               </a>
             </li>
           </ul>
@@ -79,7 +79,7 @@
     </header>
 
     <!-- Page Content -->
-    <section class="content-section-a">
+    <!--<section class="content-section-a">
 
       <div class="container">
         <div class="row">
@@ -97,8 +97,8 @@
         </div>
 
       </div>
-      <!-- /.container -->
-    </section>
+      /.container -->
+    <!--</section>
 
     <section class="content-section-b">
 
@@ -118,10 +118,10 @@
         </div>
 
       </div>
-      <!-- /.container -->
+      /.container -->
 
-    </section>
-    <!-- /.content-section-b -->
+    <!--</section>
+    /.content-section-b 
 
     <section class="content-section-a">
 
@@ -142,11 +142,11 @@
         </div>
 
       </div>
-      <!-- /.container -->
+      /.container -->
 
-    </section>
+    
     <!-- /.content-section-a -->
-
+    <!--</section>
     <aside class="banner">
 
       <div class="container">
@@ -180,7 +180,7 @@
         </div>
 
       </div>
-      <!-- /.container -->
+       /.container -->
 
     </aside>
     <!-- /.banner -->
@@ -196,23 +196,117 @@
           <li class="list-inline-item">
             <a href="#about">About</a>
           </li>
-          <li class="footer-menu-divider list-inline-item">&sdot;</li>
+          <!--<li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#services">Services</a>
+            <a href="#services">Services</a>-->
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <p class="copyright text-muted small">Copyright &copy; Your Company 2017. All Rights Reserved</p>
+        <p class="copyright text-muted small">Copyright &copy; Pause 2017. All Rights Reserved</p>
       </div>
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyC3FpISPgUilSgSmpm-pjOUPlRp8nYwm5Q",
+            authDomain: "pause-fb19e.firebaseapp.com",
+            databaseURL: "https://pause-fb19e.firebaseio.com",
+            projectId: "pause-fb19e",
+            storageBucket: "pause-fb19e.appspot.com",
+            messagingSenderId: "714359295912"
+          };
+          firebase.initializeApp(config);
+        </script>
+            <script>
+        var provider = new firebase.auth.GoogleAuthProvider();
+        function signIn() {
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            user = result.user;
+            alert(JSON.stringify(user));
+            // $("#bnlah").html();
+            //   window.user = user;
+            showWelcomeContainer();
+            // ...
+            }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            $("#bnlah").html(JSON.stringify(error));
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            });
+        }
+    </script>
 
+
+    <!-- facebook -->
+    https://pause-fb19e.firebaseapp.com/__/auth/handler
+    <script>
+      var provider2 = new firebase.auth.FacebookAuthProvider();
+      firebase.auth().signInWithRedirect(provider2);
+      function signIn2(){
+                  firebase.auth().getRedirectResult().then(function(result) {
+            if (result.credential) {
+              // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+              var token = result.credential.accessToken;
+              // ...
+            }
+            // The signed-in user info.
+            var user = result.user;
+          }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
+      }
+    </script>
+
+
+    <script>
+      var provider3 = new firebase.auth.TwitterAuthProvider();
+      function signIn3(){
+      firebase.auth().signInWithRedirect(provider)3;
+
+        firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+    // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+    // You can use these server side with your app's credentials to access the Twitter API.
+    var token = result.credential.accessToken;
+    var secret = result.credential.secret;
+    // ...
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+    </script>
   </body>
 
 </html>
