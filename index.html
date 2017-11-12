@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Pause</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,20 +27,20 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Pause</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link" href="#">Services</a>
-            </li>
+            </li>-->
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -51,26 +51,26 @@
     <header class="intro-header">
       <div class="container">
         <div class="intro-message">
-          <h1>Landing Page</h1>
-          <h3>A Template by Start Bootstrap</h3>
+          <h1>Pause</h1>
+          <h6>Automatically track what you're watching.</h6>
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
+              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn3();">
                 <i class="fa fa-twitter fa-fw"></i>
                 <span class="network-name">Twitter</span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-github fa-fw"></i>
-                <span class="network-name">Github</span>
+              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn2();" >
+                <i class="fa fa-facebook fa-fw"></i>
+                <span class="network-name">Facebook</span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-linkedin fa-fw"></i>
-                <span class="network-name">Linkedin</span>
+              <a href="#" class="btn btn-secondary btn-lg" onclick="signIn();">
+                <i class="fa fa-google fa-fw"></i>
+                <span class="network-name">Google</span>
               </a>
             </li>
           </ul>
@@ -79,73 +79,24 @@
     </header>
 
     <!-- Page Content -->
-    <section class="content-section-a">
+    <section  class="content-section-a">
 
       <div class="container">
         <div class="row">
           <div class="col-lg-5 ml-auto">
-            <hr class="section-heading-spacer">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-            <p class="lead">A special thanks to
-              <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>
-              for providing the photographs that you see in this template. Visit their website to become a member.</p>
+            <img style="width: 200pt" src="https://images.vexels.com/media/users/3/135546/isolated/preview/4f58cd4c85029d16dad1c7f50c3e1ce6-button-pause-icon-by-vexels.png">
           </div>
-          <div class="col-lg-5 mr-auto">
-            <img class="img-fluid" src="img/ipad.png" alt="">
-          </div>
-        </div>
-
-      </div>
-      <!-- /.container -->
-    </section>
-
-    <section class="content-section-b">
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-5 mr-auto order-lg-2">
-            <hr class="section-heading-spacer">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-            <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by
-              <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-          </div>
-          <div class="col-lg-5 ml-auto order-lg-1">
-            <img class="img-fluid" src="img/dog.png" alt="">
-          </div>
-        </div>
-
-      </div>
-      <!-- /.container -->
-
-    </section>
-    <!-- /.content-section-b -->
-
-    <section class="content-section-a">
-
-      <div class="container">
-
-        <div class="row">
           <div class="col-lg-5 ml-auto">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
-            <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-            <p class="lead">This template features the 'Lato' font, part of the
-              <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as
-              <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-          </div>
-          <div class="col-lg-5 mr-auto ">
-            <img class="img-fluid" src="img/phones.png" alt="">
+            <h2 id='about' class="section-heading">Pause</h2>
+            <p class="lead">Keep track of all your TV shows and movies from one location. <b>Pause</b> uses a Google Chrome extension to track your movie data and seamlessly update your playlist.</p>
           </div>
         </div>
 
       </div>
       <!-- /.container -->
-
     </section>
-    <!-- /.content-section-a -->
 
     <aside class="banner">
 
@@ -153,29 +104,18 @@
 
         <div class="row">
           <div class="col-lg-6 my-auto">
-            <h2>Connect to Start Bootstrap:</h2>
+            <h2 id='contact' style='font-size:30px' >
+              Contact Us 
+            </h2>
+            <h5>Help us serve you better</h5>
           </div>
           <div class="col-lg-6 my-auto">
-            <ul class="list-inline banner-social-buttons">
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
+            <p style='font-size:30px'>
+                <a href="mailto:pauseentertainmentteam@gmail.com" class="btn btn-secondary btn-lg">
+                  <i class="fa fa-envelope fa-fw"></i>
+                  pauseentertainmentteam@gmail.com
                 </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-github fa-fw"></i>
-                  <span class="network-name">Github</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-linkedin fa-fw"></i>
-                  <span class="network-name">Linkedin</span>
-                </a>
-              </li>
-            </ul>
+              </p>
           </div>
         </div>
 
@@ -190,11 +130,11 @@
       <div class="container">
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="#">Home</a>
+            <a style ="color:#868e96" href="#">Home</a>
           </li>
-          <li class="footer-menu-divider list-inline-item">&sdot;</li>
+         <!-- <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#about">About</a>
+            <a style ="color:#868e96" href="#about">About</a>
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
@@ -202,17 +142,105 @@
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#contact">Contact</a>
-          </li>
+            <a style ="color:#868e96" href="#contact">Contact</a>
+          </li>-->
         </ul>
-        <p class="copyright text-muted small">Copyright &copy; Your Company 2017. All Rights Reserved</p>
+        <p class="copyright text-muted small">Copyright &copy; Pause 2017. All Rights Reserved</p>
       </div>
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyC3FpISPgUilSgSmpm-pjOUPlRp8nYwm5Q",
+            authDomain: "pause-fb19e.firebaseapp.com",
+            databaseURL: "https://pause-fb19e.firebaseio.com",
+            projectId: "pause-fb19e",
+            storageBucket: "pause-fb19e.appspot.com",
+            messagingSenderId: "714359295912"
+          };
+          firebase.initializeApp(config);
+        </script>
+            <script>
+        var provider = new firebase.auth.GoogleAuthProvider();
+        function signIn() {
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            user = result.user;
+            alert(JSON.stringify(user));
+            // $("#bnlah").html();
+            //   window.user = user;
+            showWelcomeContainer();
+            // ...
+            }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            $("#bnlah").html(JSON.stringify(error));
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            });
+        }
+    </script>
 
+
+    <!-- facebook -->
+    <script>
+      var provider2 = new firebase.auth.FacebookAuthProvider();
+      //firebase.auth().signInWithRedirect(provider2);
+      function signIn2(){
+            firebase.auth().signInWithPopup(provider2).then(function(result) {
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+          }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
+      }
+    </script>
+
+
+    <script>
+      var provide3 = new firebase.auth.TwitterAuthProvider();
+      function signIn3(){
+          firebase.auth().signInWithPopup(provide3).then(function(result) {
+          // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+          // You can use these server side with your app's credentials to access the Twitter API.
+          var token = result.credential.accessToken;
+          var secret = result.credential.secret;
+          // The signed-in user info.
+          var user = result.user;
+          // ...
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
+      }
+    </script>
   </body>
 
 </html>
