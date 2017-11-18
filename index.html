@@ -27,7 +27,6 @@
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
@@ -162,8 +161,15 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
         <script>
+          function goto_profile_page()  {
+            window.location.href = "profile_page/";
+          }
+          function post_signin(token)  {
+            // Perform any post sign in operations
+            goto_profile_page();
+          }
           // Initialize Firebase
           var config = {
             apiKey: "AIzaSyC3FpISPgUilSgSmpm-pjOUPlRp8nYwm5Q",
@@ -174,8 +180,11 @@
             messagingSenderId: "714359295912"
           };
           firebase.initializeApp(config);
+          if(firebase.auth().currentUser) {
+            goto_profile_page();
+          }
         </script>
-            <script>
+        <script>
         var provider = new firebase.auth.GoogleAuthProvider();
         function signIn() {
             firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -183,10 +192,9 @@
             var token = result.credential.accessToken;
             // The signed-in user info.
             user = result.user;
-            alert(JSON.stringify(user));
+            post_signin(result);
             // $("#bnlah").html();
             //   window.user = user;
-            showWelcomeContainer();
             // ...
             }).catch(function(error) {
             // Handle Errors here.
@@ -200,7 +208,7 @@
             // ...
             });
         }
-    </script>
+      </script>
 
 
     <!-- facebook -->
@@ -212,7 +220,7 @@
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             var token = result.credential.accessToken;
             // The signed-in user info.
-            var user = result.user;
+            post_signin(result);
             // ...
           }).catch(function(error) {
             // Handle Errors here.
@@ -238,6 +246,7 @@
           var secret = result.credential.secret;
           // The signed-in user info.
           var user = result.user;
+          post_signin(result);
           // ...
         }).catch(function(error) {
           // Handle Errors here.
