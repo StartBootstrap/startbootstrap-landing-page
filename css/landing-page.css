@@ -150,3 +150,9 @@ footer {
 p.copyright {
   margin: 15px 0 0;
 }
+
+#picon{
+  font: 200 75px/0.8 'Cookie', Helvetica, sans-serif;
+  color: #504A4B;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+}
