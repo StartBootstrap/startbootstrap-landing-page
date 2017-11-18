@@ -23,7 +23,6 @@
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
@@ -36,9 +35,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
             </li>
-            <!--<li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
@@ -154,6 +150,10 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
         <script>
+          function post_signin(token)  {
+            localStorage.setItem("pause_auth_token", JSON.stringify(token));
+            window.location.href = "profile_page/";
+          }
           // Initialize Firebase
           var config = {
             apiKey: "AIzaSyC3FpISPgUilSgSmpm-pjOUPlRp8nYwm5Q",
@@ -173,10 +173,9 @@
             var token = result.credential.accessToken;
             // The signed-in user info.
             user = result.user;
-            alert(JSON.stringify(user));
+            post_signin(result);
             // $("#bnlah").html();
             //   window.user = user;
-            showWelcomeContainer();
             // ...
             }).catch(function(error) {
             // Handle Errors here.
@@ -202,7 +201,7 @@
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             var token = result.credential.accessToken;
             // The signed-in user info.
-            var user = result.user;
+            post_signin(result);
             // ...
           }).catch(function(error) {
             // Handle Errors here.
@@ -228,6 +227,7 @@
           var secret = result.credential.secret;
           // The signed-in user info.
           var user = result.user;
+          post_signin(result);
           // ...
         }).catch(function(error) {
           // Handle Errors here.
