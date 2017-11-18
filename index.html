@@ -148,11 +148,14 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
         <script>
-          function post_signin(token)  {
-            localStorage.setItem("pause_auth_token", JSON.stringify(token));
+          function goto_profile_page()  {
             window.location.href = "profile_page/";
+          }
+          function post_signin(token)  {
+            // Perform any post sign in operations
+            goto_profile_page();
           }
           // Initialize Firebase
           var config = {
@@ -164,8 +167,11 @@
             messagingSenderId: "714359295912"
           };
           firebase.initializeApp(config);
+          if(firebase.auth().currentUser) {
+            goto_profile_page();
+          }
         </script>
-            <script>
+        <script>
         var provider = new firebase.auth.GoogleAuthProvider();
         function signIn() {
             firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -189,7 +195,7 @@
             // ...
             });
         }
-    </script>
+      </script>
 
 
     <!-- facebook -->
