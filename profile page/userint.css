@@ -1,0 +1,95 @@
+body{
+	width:100%;
+	height:100%;
+}
+
+/*#container{
+    margin-left:auto;
+    margin-right:auto;
+    height:auto; 
+    width:auto; 
+}*/
+
+#header{
+	background: grey; 
+	padding: 15px 40px;
+	position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+		}
+
+
+#profileImage{
+	margin-top: 75px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid green;
+    float: left;
+    margin-left: 40px;
+    margin-right: 5px;
+
+
+}
+
+#watching{
+	margin-top: 75px;
+	margin-left: 10px;
+    margin-right: 10px;
+    width: 550px;
+    height: 720px;
+    border: 1px solid red;
+    float: left;
+    overflow: scroll;
+}
+
+#recommendation{
+	margin-top: 75px;
+	margin-left: 5px;
+    margin-right: 40px;
+    width: 450px;
+    height: 350px;
+    border: 1px solid blue;
+    float: left;
+    overflow: scroll;
+}
+
+#watched{
+	/*margin-top: 400px;*/
+	/*margin-left: 5px;*/
+    margin-right: 65px;
+    width: 450px;
+    height: 370px;
+    border: 1px solid pink;
+/*    clear: right;*/
+    overflow: scroll;
+    float: right;
+}
+
+#boxname{
+	width: 550px;
+	height: 50px ;
+	border:2px solid grey;
+	padding-bottom: 0px;
+}
+
+#propic{
+	width:250px;
+	height: 250px;
+	margin-top: 0px;
+	margin-left: 25px;
+	margin-right: 25px;
+
+}
+
+#username{
+	width:300px;
+	height:50px;
+	border: 2px solid black;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center
+}
+
+
+
