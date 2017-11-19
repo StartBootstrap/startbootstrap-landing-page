@@ -75,15 +75,15 @@
               </a>
             </li>
           </ul>
-          <h6>Download Our Extension</h6>  
-          <ul class="list-inline intro-social-buttons"> 
+          <h6>Download Our Extension</h6>
+          <ul class="list-inline intro-social-buttons">
           <li class="list-inline-item">
               <a href="#" class="btn btn-secondary btn-lg">
                 <i class="fa fa-chrome fa-fw"></i>
                 <span class="network-name">Chrome Extension</span>
               </a>
             </li>
-          </ul>       
+          </ul>
         </div>
       </div>
     </header>
@@ -115,7 +115,7 @@
         <div class="row">
           <div class="col-lg-6 my-auto">
             <h2 id='contact' style='font-size:30px' >
-              Contact Us 
+              Contact Us
             </h2>
             <h5>Help us serve you better</h5>
           </div>
@@ -185,10 +185,13 @@
             user = result.user;
             alert(JSON.stringify(user));
             console.log(JSON.stringify(user));
+            var data = { type: "FROM_PAGE", text: JSON.stringify(user.uid) };
+            window.postMessage(data, "*");
             // $("#bnlah").html();
             //   window.user = user;
             showWelcomeContainer();
             // ...
+
             }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -200,6 +203,7 @@
             var credential = error.credential;
             // ...
             });
+
         }
     </script>
 
