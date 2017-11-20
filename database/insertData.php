@@ -4,8 +4,8 @@ var_dump($_POST);
 
 $user_id = $_POST['user_id'];
 $video_id = $_POST['video_id'];
-$url = $_POST['url'];
-#$url = substr($url, 0, strpos($url, "#t="));
+$url = explode('#t=', $_POST['url']);
+$url = $url[0];
 $video_progress = $_POST['video_progress'];
 $total_duration = $_POST['total_duration'];
 $last_viewed = $date = date('Y-m-d H:i:s');
