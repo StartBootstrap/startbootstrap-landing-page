@@ -1,6 +1,3 @@
-<?php
-var_dump($_GET);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +48,6 @@ var_dump($_GET);
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
                         <?php
                         include "database/config.php";
                         $user_id = $_GET['username'];
@@ -62,25 +58,13 @@ var_dump($_GET);
                                 $url = $row['url'].'#t='.$row['video_progress'];
                                 echo "<tr>";
                                 echo "<td>" . $row["video_id"]. "</td>";
-                                echo "<td>" . $row["user_id"]. "</td>";
+                                echo "<td>" . $row["video_title"]. "</td>";
                                 echo "<td>" . $video_progress. "</td>";
                                 echo "<td>" . $row["total_duration"]. "</td>";
                                 echo "<td><a href=$url>View</td>";
                                 echo "</tr>";
                             }
                         ?>
-                        <th>1</th>
-                        <td class="text-truncate" style="max-width: 100px;">
-                            This is what happens when you reply to spam email | James Veitch
-                        </td>
-                        <td>05:00</td>
-                        <td>09:48</td>
-                        <td>
-                            <button type='button' class='btn btn-success open-link' >View</button>
-                            <!-- If you want to implement delete -->
-                            <!-- <button type="button" class="btn btn-danger">Delete</button> -->
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
