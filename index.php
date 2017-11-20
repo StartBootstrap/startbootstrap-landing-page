@@ -11,7 +11,7 @@
     <title>Pause</title>
 
     <!--mine-->
-    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
 
     <!-- Bootstrap core CSS -->
@@ -191,7 +191,7 @@
             // $("#bnlah").html();
             //   window.user = user;
             showWelcomeContainer();
-            
+
 
             }).catch(function(error) {
             // Handle Errors here.
