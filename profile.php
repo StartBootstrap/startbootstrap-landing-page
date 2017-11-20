@@ -52,6 +52,23 @@ var_dump($_GET);
                 </thead>
                 <tbody>
                     <tr>
+                        <?php
+                        include "database/config.php";
+                        $user_id = $_GET['username'];
+                        $sql = "SELECT * FROM video WHERE `user_id` = '$user_id'";
+                        $result = $conn->query($sql);
+                        while($row = $result->fetch_assoc()) {
+                                $video_progress = $row['video_progress'];
+                                $url = $row['url'].'#t='.$row['video_progress'];
+                                echo "<tr>";
+                                echo "<td>" . $row["video_id"]. "</td>";
+                                echo "<td>" . $row["user_id"]. "</td>";
+                                echo "<td>" . $video_progress. "</td>";
+                                echo "<td>" . $row["total_duration"]. "</td>";
+                                echo "<td><a href=$url>View</td>";
+                                echo "</tr>";
+                            }
+                        ?>
                         <th>1</th>
                         <td class="text-truncate" style="max-width: 100px;">
                             This is what happens when you reply to spam email | James Veitch
@@ -59,7 +76,7 @@ var_dump($_GET);
                         <td>05:00</td>
                         <td>09:48</td>
                         <td>
-                            <button type="button" id ="viewVideo" class="btn btn-success open-link" >View</button>
+                            <button type='button' class='btn btn-success open-link' >View</button>
                             <!-- If you want to implement delete -->
                             <!-- <button type="button" class="btn btn-danger">Delete</button> -->
                         </td>
