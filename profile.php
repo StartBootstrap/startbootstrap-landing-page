@@ -58,10 +58,10 @@
                                 $url = $row['url'].'#t='.$row['video_progress'];
                                 echo "<tr>";
                                 echo "<td>" . $row["video_id"]. "</td>";
-                                echo "<td>Name of the video</td>";
+                                echo "<td><a href=$url target=\"_blank\">Name of the video</a></td>";
                                 echo "<td>" . $video_progress. "</td>";
                                 echo "<td>" . $row["total_duration"]. "</td>";
-                                echo "<td><a href=$url>View</td>";
+                                echo "<td><a href=$url target=\"_blank\">View</a></td>";
                                 echo "</tr>";
                             }
                         ?>
