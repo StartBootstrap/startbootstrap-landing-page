@@ -61,14 +61,6 @@ CREATE TABLE `user` (
   `last_login` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `email`, `name`, `created_on`, `last_login`) VALUES
-('\"9ww3BCuTu0P9DKQ5sKfIHP8rIV83\"', 'swarnims@bu.edu', 'Swarnim', '0000-00-00 00:00:00', '2017-11-20 18:16:37'),
-('\"NplPz09KpMOJ1HnElCMXjnXUBlU2\"', 'swarnims@bu.edu', 'Swarnim', '0000-00-00 00:00:00', '2017-11-20 18:33:48');
-
 -- --------------------------------------------------------
 
 --
@@ -77,6 +69,7 @@ INSERT INTO `user` (`user_id`, `email`, `name`, `created_on`, `last_login`) VALU
 
 CREATE TABLE `video` (
   `video_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   `video_progress` varchar(255) NOT NULL,
@@ -84,13 +77,6 @@ CREATE TABLE `video` (
   `created_on` datetime NOT NULL,
   `last_viewed` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `video`
---
-
-INSERT INTO `video` (`video_id`, `user_id`, `url`, `video_progress`, `total_duration`, `created_on`, `last_viewed`) VALUES
-(17, '\"NplPz09KpMOJ1HnElCMXjnXUBlU2\"', 'https://www.youtube.com/watch?v=KIPTE0R5WPA', '31.444057', '7076.501', '0000-00-00 00:00:00', '2017-11-20 18:33:48');
 
 --
 -- Indexes for dumped tables
