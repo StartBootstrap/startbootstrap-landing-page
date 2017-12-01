@@ -53,17 +53,18 @@
                         $user_id = $_GET['username'];
                         $sql = "SELECT * FROM video WHERE `user_id` = '$user_id'";
                         $result = $conn->query($sql);
-                        while($row = $result->fetch_assoc()) {
-                                $video_progress = $row['video_progress'];
-                                $url = $row['url'].'#t='.$row['video_progress'];
-                                echo "<tr>";
-                                echo "<td>" . $row["video_id"]. "</td>";
-                                echo "<td><a href=$url target=\"_blank\">Name of the video</a></td>";
-                                echo "<td>" . $video_progress. "</td>";
-                                echo "<td>" . $row["total_duration"]. "</td>";
-                                echo "<td><a href=$url target=\"_blank\">View</a></td>";
-                                echo "</tr>";
-                            }
+                        while ($row = $result->fetch_assoc()) {
+                            $video_progress = $row['video_progress'];
+                            $url = $row['url'].'#t='.$row['video_progress'];
+                            $title = $row['video_title'];
+                            echo "<tr>";
+                            echo "<td>" . $row["video_id"]. "</td>";
+                            echo "<td><a href=$url target=\"_blank\">$title</a></td>";
+                            echo "<td>" . $video_progress. "</td>";
+                            echo "<td>" . $row["total_duration"]. "</td>";
+                            echo "<td><a href=$url target=\"_blank\">View</a></td>";
+                            echo "</tr>";
+                        }
                         ?>
                 </tbody>
             </table>
@@ -93,6 +94,16 @@
             alert();
         });
     </script>
+    <!--script>
+        $.ajax({
+            type: 'GET',
+            dataType: 'jsonp',
+            url: 'http://localhost:5000/',
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    </script-->
     <script>
         function extractHostname(url) {
             var hostname;
