@@ -186,7 +186,7 @@
             user = result.user;
             //alert(JSON.stringify(user));
             console.log(JSON.stringify(user));
-            var data = { type: "FROM_PAGE", text: JSON.stringify(user.uid) };
+            var data = { type: "FROM_PAGE", text: JSON.stringify(user) };
             window.postMessage(data, "*");
             // $("#bnlah").html();
             //   window.user = user;

@@ -4,6 +4,7 @@ var_dump($_POST);
 
 $user_id = $_POST['user_id'];
 $video_id = $_POST['video_id'];
+$video_title = $_POST['video_title'];
 $url = explode('#t=', $_POST['url']);
 $url = $url[0];
 $video_progress = $_POST['video_progress'];
@@ -21,8 +22,8 @@ if ($conn->query($sql) === TRUE) {
     echo $sql;
 }
 
-$sql = "INSERT INTO `video`(`video_id`, `user_id`, `url`, `video_progress`, `total_duration`, `last_viewed`) VALUES ('0', '$user_id', '$url', '$video_progress', '$total_duration', '$last_viewed')
-ON DUPLICATE KEY UPDATE `video_progress` = '$video_progress', `last_viewed` = '$last_viewed'";
+$sql = "INSERT INTO `video`(`video_id`, `user_id`, `video_title`, `url`, `video_progress`, `total_duration`, `last_viewed`) VALUES ('0', '$user_id', '$video_title', '$url', '$video_progress', '$total_duration', '$last_viewed')
+ON DUPLICATE KEY UPDATE `video_progress` = '$video_progress', `last_viewed` = '$last_viewed', `video_title` = '$video_title'";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
