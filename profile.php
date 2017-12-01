@@ -33,7 +33,15 @@
     <div class="container main-body">
         <div class="jumbotron">
             <!-- Add username -->
-            <h2>Welcome, </h2>
+            <?php
+            include "database/config.php";
+            $user_id = $_GET['username'];
+            $sql = "SELECT * FROM user WHERE `user_id` = '$user_id'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $userName = $row['name'];
+            echo "<h2>Welcome, $userName</h2>";
+            ?>
         </div>
         <div class="jumbotron">
             <h4>Watched Videos</h4>
