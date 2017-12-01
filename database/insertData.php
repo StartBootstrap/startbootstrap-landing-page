@@ -3,6 +3,8 @@ include 'config.php';
 var_dump($_POST);
 
 $user_id = $_POST['user_id'];
+$user_name = $_POST['user_name'];
+$email_id = $_POST['email_id'];
 $video_id = $_POST['video_id'];
 $video_title = $_POST['video_title'];
 $url = explode('#t=', $_POST['url']);
@@ -13,7 +15,7 @@ $last_viewed = $date = date('Y-m-d H:i:s');
 
 // make the entry for the user if it doesn't exist
 
-$sql = "INSERT INTO `user`(`user_id`, `email`, `name`, `last_login`) VALUES ('$user_id', 'swarnims@bu.edu', 'Swarnim', '$last_viewed')
+$sql = "INSERT INTO `user`(`user_id`, `email`, `name`, `last_login`) VALUES ('$user_id', '$email_id', '$user_name', '$last_viewed')
 ON DUPLICATE KEY UPDATE `last_login` = '$last_viewed'";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
