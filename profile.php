@@ -67,7 +67,7 @@
                             $title = $row['video_title'];
                             echo "<tr>";
                             echo "<td>" . $row["video_id"]. "</td>";
-                            echo "<td><a href=$url target=\"_blank\">$title</a></td>";
+                            echo "<td><a href=$url class='video_name' target=\"_blank\">$title</a></td>";
                             echo "<td>" . $video_progress. "</td>";
                             echo "<td>" . $row["total_duration"]. "</td>";
                             echo "<td><a href=$url target=\"_blank\">View</a></td>";
@@ -102,16 +102,28 @@
             alert();
         });
     </script>
-    <!--script>
-        $.ajax({
-            type: 'GET',
-            dataType: 'jsonp',
-            url: 'http://localhost:5000/',
-            success: function(data) {
-                console.log(data);
-            }
-        });
-    </script-->
+    <script>
+    $( document ).ready(function() {
+        // var omdbData = document.getElementsByClassName('video_name');
+        var omdbData = $(".video_name");
+        // console.log(omdbData[0].innerHTML);
+        for (var i = 0; i < omdbData.length; i++) {
+            // console.log(omdbData[i].innerHTML);
+
+            var toSendTitle = omdbData[i].innerHTML;
+            console.log(toSendTitle);
+            var url = "https://www.omdbapi.com?s="+toSendTitle+"&apiKey=thewdb";
+            console.log(url)
+            $.getJSON(url, function(data) {
+                try {
+                    console.log(data);
+                } catch(err) {
+                    console.log("blah")
+                }
+            });
+        }
+    });
+    </script>
     <script>
         function extractHostname(url) {
             var hostname;
