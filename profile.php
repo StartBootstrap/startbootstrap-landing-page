@@ -110,17 +110,14 @@
         for (var i = 0; i < omdbData.length; i++) {
             // console.log(omdbData[i].innerHTML);
 
-            var toSendTitle = omdbData[i].innerHTML;
+            var toSendTitle = escape(omdbData[i].innerHTML);
             console.log(toSendTitle);
             var url = "https://www.omdbapi.com?s="+toSendTitle+"&apiKey=thewdb";
-            console.log(url)
+            // console.log(url)
             $.getJSON(url, function(data) {
-                try {
-                    console.log(data);
-                } catch(err) {
-                    console.log("blah")
-                }
-            });
+
+            }).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus); })
+              .done(function(data) { console.log(data) });
         }
     });
     </script>
