@@ -19,15 +19,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></
+span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="#">Pause</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-danger my-2 my-sm-0" type="submit">Sign Out</button>
-            </form>
+                <!-- <button id="signout" class="btn btn-danger my-2 my-sm-0" type="submit">Sign Out</button> -->
+                
+                <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-danger my-2 my-sm-0" type="submit" href="https://pause.trixster.xyz/">Sign Out</button>
+                </form>
         </div>
     </nav>
     <div class="container main-body">
@@ -40,19 +43,18 @@
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
             $userName = $row['name'];
-            echo "<h2>Welcome, $userName</h2>";
+            echo "<h2 id='username'>Welcome $userName,</h2>";
             ?>
         </div>
         <div class="jumbotron">
-            <h4>Watched Videos</h4>
-            <table class="table">
+            <h4>Watching</h4>
+            <table class="table table-striped ">
                 <thead class="thead-dark">
                     <tr>
-                        <th>#</th>
+
                         <th>Title</th>
                         <th>Progress</th>
-                        <th>Total Time</th>
-                        <th>Actions</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -66,11 +68,8 @@
                             $url = $row['url'].'#t='.$row['video_progress'];
                             $title = $row['video_title'];
                             echo "<tr>";
-                            echo "<td>" . $row["video_id"]. "</td>";
                             echo "<td><a href=$url class='video_name' target=\"_blank\">$title</a></td>";
-                            echo "<td>" . $video_progress. "</td>";
-                            echo "<td>" . $row["total_duration"]. "</td>";
-                            echo "<td><a href=$url target=\"_blank\">View</a></td>";
+                            echo "<td>" . gmdate("H:i:s", (int)$video_progress). "/" . gmdate("H:i:s", (int)$row["total_duration"])."</td>";
                             echo "</tr>";
                         }
                         ?>
@@ -107,18 +106,29 @@
         // var omdbData = document.getElementsByClassName('video_name');
         var omdbData = $(".video_name");
         // console.log(omdbData[0].innerHTML);
-        for (var i = 0; i < omdbData.length; i++) {
+        testVar = 0
+        setTimeout(function(){
+        for (var iterator = 0; iterator < omdbData.length; iterator++) {
             // console.log(omdbData[i].innerHTML);
-
-            var toSendTitle = escape(omdbData[i].innerHTML);
+            var toSendTitle = escape(omdbData[iterator].innerHTML);
             console.log(toSendTitle);
-            var url = "https://www.omdbapi.com?s="+toSendTitle+"&apiKey=thewdb";
-            // console.log(url)
-            $.getJSON(url, function(data) {
-
-            }).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus); })
-              .done(function(data) { console.log(data) });
+            var url = "https://www.omdbapi.com?t="+toSendTitle+"&apiKey=thewdb";
+            console.log(url)
+            $.ajax({
+                type: 'GET',
+                url: url,
+                error: function() {
+                    console.log('')
+                },
+                success: function(data) {
+                    if (data.Plot != 'undefined')
+                        omdbData[testVar].setAttribute('title', data.Plot);
+                    testVar += 1;
+                },
+                timeout: 3000
+            });
         }
+    });
     });
     </script>
     <script>
