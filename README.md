@@ -1,3 +1,3 @@
-# [Grazer Computer Club Homepage](https://gc2.at)
+# [Grazer Computer Club Website](https://gc2.at)
 
 
