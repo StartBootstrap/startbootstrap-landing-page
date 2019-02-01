@@ -1,7 +1,7 @@
 {
     "title": "Landing Page",
     "name": "startbootstrap-landing-page",
-    "version": "5.0.1",
+    "version": "5.0.2",
     "description": "An HTML landing page template built with Bootstrap",
     "keywords": [
         "css",
@@ -26,7 +26,7 @@
         "url": "https://github.com/BlackrockDigital/startbootstrap-landing-page.git"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "5.6.3",
+        "@fortawesome/fontawesome-free": "5.7.0",
         "bootstrap": "4.2.1",
         "jquery": "3.3.1",
         "simple-line-icons": "^2.4.1"
