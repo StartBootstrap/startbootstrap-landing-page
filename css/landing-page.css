@@ -8,9 +8,18 @@ body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-h1,
-h2,
+h1 {
+  font-family: Helvetica Neue, Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+h2 {
+   font-family: Helvetica Neue, Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
 h3,
+
 h4,
 h5,
 h6 {
@@ -18,10 +27,11 @@ h6 {
   font-weight: 700;
 }
 
+
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background: url("../img/chip.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -69,10 +79,12 @@ header.masthead h1 {
 .features-icons {
   padding-top: 7rem;
   padding-bottom: 7rem;
+
 }
 
 .features-icons .features-icons-item {
   max-width: 20rem;
+
 }
 
 .features-icons .features-icons-item .features-icons-icon {
@@ -81,10 +93,12 @@ header.masthead h1 {
 
 .features-icons .features-icons-item .features-icons-icon i {
   font-size: 4.5rem;
+  vertical-align: center;
 }
 
 .features-icons .features-icons-item:hover .features-icons-icon i {
   font-size: 5rem;
+
 }
 
 .testimonials {
@@ -105,7 +119,7 @@ header.masthead h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background: url("../img/sunrays.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -119,6 +133,31 @@ header.masthead h1 {
   top: 0;
   left: 0;
   opacity: 0.3;
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.nav .navbar {
+  display: inline-block;
+  position: relative;
+  left: 0;
+  display: block;
+  float: left;
+  margin: 10px 10px 10px 10px;
+  padding: 15px;
+  border: 1px red solid;
+  background-color: #343A40;
+}
+
+.nav .navbar ul li a:hover {
+  color: orange;
 }
 
 footer.footer {
