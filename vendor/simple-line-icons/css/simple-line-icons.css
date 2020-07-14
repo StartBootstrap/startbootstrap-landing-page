@@ -776,3 +776,19 @@
 .icon-social-steam:before {
   content: "\e620";
 }
+
+.cranberry {
+  color: #ff00c7!important;
+}
+
+.gold {
+  color: #ffa600!important;
+}
+
+.r_blue {
+  color: #0014e3!important;
+}
+
+.azure {
+  color: #0387ff!important;
+}
