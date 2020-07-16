@@ -1,0 +1,314 @@
+@import url('demo.css');
+
+/* Entypo Icon Font */
+@font-face {
+  font-family: 'entypo-selected';
+  src: url("../font/entypo-selected.eot");
+  src: 
+	  url("../font/entypo-selected.eot?#iefix") format('embedded-opentype'), 
+	  url("../font/entypo-selected.woff") format('woff'), 
+	  url("../font/entypo-selected.ttf") format('truetype'), 
+	  url("../font/entypo-selected.svg#entypo-selected") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Gamma Gallery Style */
+
+.gamma-container {
+	min-height: 200px;
+}
+
+.gamma-gallery {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	position: relative;
+}
+
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+.gamma-gallery:before,
+.gamma-gallery:after {
+    content: " ";
+    display: table;
+}
+
+.gamma-gallery:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+.gamma-gallery {
+    *zoom: 1;
+}
+ */
+
+.gamma-gallery li {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	float: left;
+	padding: 4px;
+}
+
+.gamma-gallery li img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+.gamma-description {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.6);
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	bottom: 20px;
+	right: 20px;
+	text-align: center;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	-webkit-transition: opacity 0.4s ease-in-out;
+	-moz-transition: opacity 0.4s ease-in-out;
+	-ms-transition: opacity 0.4s ease-in-out;
+	-o-transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
+}
+
+.no-touch .gamma-gallery li:hover .gamma-description {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	opacity: 1;
+}
+ 
+.gamma-description:before {
+	content: '';
+	height: 100%;
+}
+
+.gamma-description:before,
+.gamma-description h3 {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.gamma-description h3 {
+	width: 100%;
+	padding: 0 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+
+.gamma-buttons {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 10001;
+}
+
+.gamma-buttons button {
+	float: left;
+	background: #333;
+	color: #fff;
+	display: block;
+	width: 30px;
+	height: 30px;
+	font-size: 14px;
+	margin-left: 5px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+.gamma-buttons button:before,
+.gamma-nav span:before {
+	font-family: 'entypo-selected';
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: block;
+	text-align: center;
+	opacity: 0.7;
+	outline: none;
+}
+
+.no-touch .gamma-buttons button:hover {
+	background: #666;
+}
+
+button.gamma-btn-close:before {
+	content: '\2715';
+}
+
+button.gamma-btn-ssplay:before {
+	content: '\25b6';
+}
+
+button.gamma-btn-sspause:before {
+	content: '\2389';
+}
+
+.gamma-single-view {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+	z-index: 10000;
+	text-align: center;
+	display:none;
+}
+
+.gamma-overlay {
+	background: #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: none;
+	z-index: 9999;
+}
+
+.gamma-single-view img {
+	position: absolute;
+	cursor: pointer;
+}
+
+.gamma-description-wrapper {
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 10;
+	padding: 5px 0;
+}
+
+.gamma-single-view .gamma-description {
+	background: transparent;
+	position: relative;
+	bottom: auto;
+	left: auto;
+	right: auto;
+	top: auto;
+}
+
+.gamma-single-view .gamma-description h3 {
+	font-size: 15px;
+	padding: 5px 0;
+	color: #fff;
+}
+
+.gamma-nav span {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 38px;
+	top: 50%;
+	margin-top: -19px;
+	left: 20px;
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.gamma-nav span.gamma-next {
+	left: auto;
+	right: 20px;
+}
+
+.gamma-nav span:before {
+	color: #fff;
+	opacity: 0.7;
+	font-size: 40px;
+}
+
+.gamma-nav span:hover:before {
+	opacity: 1;
+}
+
+.gamma-nav span:before {
+	display: block;
+	margin: 0;
+	width: auto;
+}
+
+.gamma-nav span.gamma-prev:before {
+	content: '\e75d';
+}
+
+.gamma-nav span.gamma-next:before {
+	content: '\e75e';
+}
+
+.gamma-img-fly {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+}
+
+/* Loaders */
+
+.gamma-loading {
+	background: transparent url(../images/loader_light.gif) no-repeat center center;
+}
+
+.gamma-single-view.gamma-loading {
+	background: transparent url(../images/loader_dark.gif) no-repeat center center;
+}
+
+
+/* Make some things unselectable. Remove where selection is needed: */
+
+.gamma-container img,
+.gamma-nav span,
+.gamma-buttons button,
+.gamma-description-wrapper,
+.gamma-description,
+.gamma-description h3 {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@media screen and (max-width: 750px) {
+
+	.gamma-description {
+		top: 10px;
+		left: 10px;
+		bottom: 10px;
+		right: 10px;
+	}
+
+	.gamma-description h3 {
+		font-size: 14px;
+		padding: 0 5px;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.gamma-buttons {
+		float: left;
+		clear: both;
+	}
+
+}
