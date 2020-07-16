@@ -53,6 +53,7 @@ header.masthead h1 {
 
 .showcase .showcase-text {
   padding: 3rem;
+  text-align: initial;
 }
 
 .showcase .showcase-img {
@@ -127,4 +128,8 @@ footer.footer {
 
 html {
   scroll-behavior: smooth;
+}
+
+.img-gallery {
+  max-width: 500px;
 }
