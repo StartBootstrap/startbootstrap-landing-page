@@ -22,6 +22,9 @@
   <link href="css/landing-page.min.css" rel="stylesheet">
   <link href="js/lightGallery/dist/css/lightgallery.min.css" type="text/css" rel="stylesheet">
 
+  <link rel="stylesheet" href="css/justifiedGallery.css" />
+  <script src="js/jquery.justifiedGallery.js"></script>
+
 
 </head>
 
@@ -111,47 +114,27 @@
         <div class="col-lg-6 my-auto showcase-text">
 
 
-          <div class="demo-gallery">
-            <ul id="lightgallery">
-              <li data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/1-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/1-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/1.jpg 800" data-src="https://sachinchoolur.github.io/lightGallery/static/img/1-1600.jpg"
-              data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
-                <a href="">
-                  <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-1.jpg">
-                  <div class="demo-gallery-poster">
-                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
-                  </div>
-                </a>
-              </li>
-              <li data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/2-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/2-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/2.jpg 800" data-src="https://sachinchoolur.github.io/lightGallery/static/img/2-1600.jpg"
-              data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
-                <a href="">
-                  <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-2.jpg">
-                  <div class="demo-gallery-poster">
-                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
-                  </div>
-                </a>
-              </li>
-              <li data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/13-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/13-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/13.jpg 800" data-src="https://sachinchoolur.github.io/lightGallery/static/img/13-1600.jpg"
-              data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
-                <a href="">
-                  <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-13.jpg">
-                  <div class="demo-gallery-poster">
-                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
-                  </div>
-                </a>
-              </li>
-              <li data-responsive="https://sachinchoolur.github.io/lightGallery/static/img/4-375.jpg 375, https://sachinchoolur.github.io/lightGallery/static/img/4-480.jpg 480, https://sachinchoolur.github.io/lightGallery/static/img/4.jpg 800" data-src="https://sachinchoolur.github.io/lightGallery/static/img/4-1600.jpg"
-              data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>" data-pinterest-text="Pin it" data-tweet-text="share on twitter ">
-                <a href="">
-                  <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-4.jpg">
-                  <div class="demo-gallery-poster">
-                    <img src="https://sachinchoolur.github.io/lightGallery/static/img/zoom.png">
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <span class="small">Click on any of the images to see lightGallery</span>
-          </div>
+          <div id="mygallery" >
+            <a href="img/foto_presida/700.jpg">
+                <img alt="Title 1" class="img-rounded" src="img/foto_presida/1.jpg"/>
+            </a>
+            <a href="img/foto_presida/700.jpg">
+                <img alt="Title 2" class="img-rounded" src="img/foto_presida/1.jpg"/>
+            </a>
+            <a href="img/foto_presida/700.jpg">
+              <img alt="Title 1" class="img-rounded" src="img/foto_presida/1.jpg"/>
+          </a>
+          <a href="img/foto_presida/700.jpg">
+              <img alt="Title 2" class="img-rounded" src="img/foto_presida/1.jpg"/>
+          </a>
+          <a href="img/foto_presida/700.jpg">
+            <img alt="Title 1" class="img-rounded" src="img/foto_presida/1.jpg"/>
+        </a>
+        <a href="img/foto_presida/700.jpg">
+            <img alt="Title 2" class="img-rounded" src="img/foto_presida/1.jpg"/>
+        </a>
+            <!-- other images... -->
+        </div>
       
       
 
@@ -289,18 +272,12 @@
     $(document).ready(function() {
       
 
-    $('#lightgallery').lightGallery({
 
-      thumbnail: true,
-    mode: 'lg-fade',
-    addClass: 'fixed-size',
-    counter: false,
-    download: false,
-    startClass: '',
-    enableSwipe: false,
-    enableDrag: false,
-    speed: 500
+
+    $('#mygallery').lightGallery({
+        thumbnail:true
     }); 
+
 
 
     });
