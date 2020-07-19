@@ -116,25 +116,83 @@
 
 
           <div id="mygallery" >
-            <a href="img/foto_presida/700.jpg">
-                <img alt="Title 1" class="img-rounded img-fluid img-gallery" 
-                src="img/foto_presida/1.jpg" />
+            <div class="row" style="max-height: 40%!important;">
+            <figure class="rounded p-1 bg-white shadow-sm img-gallery">
+
+            <a href="img/foto_presida/700.jpg" data-sub-html=".caption">
+                <img alt="Title 1" class="img-rounded img-fluid" 
+                src="img/foto_presida/150.jpg" />
+                <figcaption class="p-1 card-img-bottom">
+                  <h5 class="h5 font-weight-bold mb-2 font-italic">Paulo</h5>
+                  <p class="mb-0 text-small text-muted font-italic">Sorocaba Leste</p>
+                </figcaption>
+
             </a>
-            <a href="img/foto_presida/1.jpg">
-                <img alt="Title 2" class="img-rounded img-fluid img-gallery" src="img/foto_presida/1.jpg"/>
-            </a>
-            <a href="img/foto_presida/700.jpg">
-              <img alt="Title 1" class="img-rounded img-fluid img-gallery" src="img/foto_presida/1.jpg"/>
-          </a>
-          <a href="img/foto_presida/700.jpg">
-              <img alt="Title 2" class="img-rounded img-fluid img-gallery" src="img/foto_presida/1.jpg"/>
-          </a>
-          <a href="img/foto_presida/700.jpg">
-            <img alt="Title 1" class="img-rounded img-fluid img-gallery" src="img/foto_presida/1.jpg"/>
-        </a>
-        <a href="img/foto_presida/700.jpg">
-            <img alt="Title 2" class="img-rounded img-gallery" src="img/foto_presida/1.jpg"/>
-        </a>
+            </figure>
+            <figure class="rounded p-1 bg-white shadow-sm img-gallery">
+
+              <a href="img/foto_presida/700.jpg" data-sub-html=".caption">
+                  <img alt="Title 1" class="img-rounded img-fluid" 
+                  src="img/foto_presida/150.jpg" />
+                  <figcaption class="p-1 card-img-bottom">
+                    <h5 class="h5 font-weight-bold mb-2 font-italic">Paulo</h5>
+                    <p class="mb-0 text-small text-muted font-italic">Sorocaba Leste</p>
+                  </figcaption>
+  
+              </a>
+              </figure>
+              <figure class="rounded p-1 bg-white shadow-sm img-gallery">
+
+                <a href="img/foto_presida/700.jpg" data-sub-html=".caption">
+                    <img alt="Title 1" class="img-rounded img-fluid" 
+                    src="img/foto_presida/150.jpg" />
+                    <figcaption class="p-1 card-img-bottom">
+                      <h5 class="h5 font-weight-bold mb-2 font-italic">Paulo</h5>
+                      <p class="mb-0 text-small text-muted font-italic">Sorocaba Leste</p>
+                    </figcaption>
+    
+                </a>
+                </figure>
+              </div>
+
+              <div class="row" style="max-height: 40%!important;">
+                <figure class="rounded p-1 bg-white shadow-sm img-gallery">
+    
+                <a href="img/foto_presida/700.jpg" data-sub-html=".caption">
+                    <img alt="Title 1" class="img-rounded img-fluid" 
+                    src="img/foto_presida/150.jpg" />
+                    <figcaption class="p-1 card-img-bottom">
+                      <h5 class="h5 font-weight-bold mb-2 font-italic">Paulo</h5>
+                      <p class="mb-0 text-small text-muted font-italic">Sorocaba Leste</p>
+                    </figcaption>
+    
+                </a>
+                </figure>
+                <figure class="rounded p-1 bg-white shadow-sm img-gallery">
+    
+                  <a href="img/foto_presida/700.jpg" data-sub-html=".caption">
+                      <img alt="Title 1" class="img-rounded img-fluid" 
+                      src="img/foto_presida/150.jpg" />
+                      <figcaption class="p-1 card-img-bottom">
+                        <h5 class="h5 font-weight-bold mb-2 font-italic">Paulo</h5>
+                        <p class="mb-0 text-small text-muted font-italic">Sorocaba Leste</p>
+                      </figcaption>
+      
+                  </a>
+                  </figure>
+                  <figure class="rounded p-1 bg-white shadow-sm img-gallery">
+    
+                    <a href="img/foto_presida/700.jpg" data-sub-html=".caption">
+                        <img alt="Title 1" class="img-rounded img-fluid" 
+                        src="img/foto_presida/150.jpg" />
+                        <figcaption class="p-1 card-img-bottom">
+                          <h5 class="h5 font-weight-bold mb-2 font-italic">Paulo</h5>
+                          <p class="mb-0 text-small text-muted font-italic">Sorocaba Leste</p>
+                        </figcaption>
+        
+                    </a>
+                    </figure>
+                  </div>              
             <!-- other images... -->
         </div>
       
@@ -277,7 +335,8 @@
 
 
     $('#mygallery').lightGallery({
-        thumbnail:true
+        thumbnail: true,
+        subHtmlSelectorRelative: true
     }); 
 
 
