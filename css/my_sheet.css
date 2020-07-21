@@ -1,3 +1,15 @@
 .img-gallery {
-    max-width: 32%!important;
+    max-width: 28%!important;
 }
+
+.title {
+    font-size: 4rem!important;
+    color: white!important;    
+}
+
+#gallery a{
+    margin:0px 0px;
+    display:inline-block;
+    text-decoration:none;
+    color:black;
+ }
