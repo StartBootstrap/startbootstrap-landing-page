@@ -25,19 +25,18 @@ var chord = d3.layout.chord()
     .matrix(matrix);
 
 var width = 900,
-    height = 650,
+    height = 500,
     innerRadius = Math.min(width, height) * .41,
     outerRadius = innerRadius * 1.05;
-
 var fill = d3.scale.ordinal()
     .domain(d3.range(NameProvider.length))
     .range(colors);
-
 var svg = d3.select("#chart").append("svg:svg")
     .attr("width", width)
-    .attr("height", height + 200)
+    .attr("height", height + 196)
     .append("svg:g")
-    .attr("transform", "translate(" + width / 2 + "," + (height / 2 + 60) + ")");
+    .attr("transform", "translate(" + width / 1.8 + "," + (height / 2 + 70) + ")");
+
 
 var arc = d3.svg.arc()
     .innerRadius(innerRadius)
