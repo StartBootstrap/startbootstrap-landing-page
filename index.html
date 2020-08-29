@@ -122,10 +122,27 @@
                         <a class="dropdown-item" href="visual02.html">Humidity (%) vs. Latitude</a>
                         <a class="dropdown-item" href="visual03.html">Cloudiness (%) vs. Latitude</a>
                         <a class="dropdown-item" href="visual04.html">Wind Speed (mph) vs. Latitude</a>
+
                     </div>
                 </li>
+                <li class="selection">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="well">
+                                <h5>Test Subject ID No.:</h5>
+                                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Demographic Info</h3>
+                                </div>
+                                <div id="sample-metadata" class="panel-body"></div>
+                            </div>
+                        </div>
+                </li>
+
             </ul>
-        </div>
+            </div>
     </nav>
 
     <main role="main">
@@ -133,7 +150,7 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container">
-                <h2 class="display-3">The Weather Analysis</h2>
+                <h2 class="display-3">IMMIGRATION</h2>
                 <p>What’s the Weather Like? Visualize the weather of 500+ cities across the world of varying distance from the equator, comparing: Temperature (F) vs. Latitude, Humidity (%) vs. Latitude, Cloudiness (%) vs. Latitude, and Wind Speed (mph)
                     vs. Latitude. </p>
             </div>
@@ -145,39 +162,39 @@
             <div id="plot"></div>
         </section>
 
-        <div class="col-sm-12 column">
+        <div class="col-sm-6 column">
             <div id="chart"></div>
             <div id="tooltip"></div>
         </div>
-        <script src="assets/js/app_CHORD DIAGRAM.js" type="text/javascript"></script>
+        <div class="col-sm-6 my-auto showcase-text">
+            <h2>Updated For Bootstrap 4</h2>
+            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+            <script src="assets/js/app_CHORD DIAGRAM.js" type="text/javascript"></script>
 
-        <!-- Icons Grid -->
-        <section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex">
-                                <i class="far fa-bookmark m-auto text-primary"></i>
+            <!-- Icons Grid -->
+            <section class="features-icons bg-light text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                <div class="features-icons-icon d-flex">
+                                    <i class="far fa-bookmark m-auto text-primary"></i>
+                                </div>
+                                <h3>14% of USA population are immigrants</h3>
+                                <p class="lead mb-0"></p>
                             </div>
-                            <h3>14% of USA population are immigrants</h3>
-                            <p class="lead mb-0"></p>
+
                         </div>
-                    </div>
-                    <div class="col-sm-12 column">
-                        <div id="chart"></div>
-                        <div id="tooltip"></div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex">
-                                <i class="far fas fa-exclamation-circle m-auto text-primary"></i>
+                        <div class="col-lg-4">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                <div class="features-icons-icon d-flex">
+                                    <i class="far fas fa-exclamation-circle m-auto text-primary"></i>
+                                </div>
+                                <h3>Florida is the state with the highest inmmigrant population</h3>
                             </div>
-                            <h3>Florida is the state with the highest inmmigrant population</h3>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="col-lg-4">
+                        </div class="features-icons-item mx-auto mb-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
                             <i class="fas fa-comments m-auto text-primary"></i>
                         </div>
@@ -185,8 +202,8 @@
 
                     </div>
                 </div>
-            </div>
-            </div>
+        </div>
+        </div>
         </section>
 
         <!-- Image Showcases -->
@@ -196,22 +213,23 @@
 
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/flags.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Fully Responsive Design</h2>
-                        <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                        <h2>Fact1</h2>
+                        <p class="lead mb-0">14% of USA population are immigrants
+                            <</p>
                     </div>
                 </div>
                 <div class="row no-gutters">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/florida.jpg');"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Updated For Bootstrap 4</h2>
-                        <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+                        <h2>Fact2</h2>
+                        <p class="lead mb-0">Florida is the state with the highest inmmigrant population</p>
                     </div>
                 </div>
                 <div class="row no-gutters">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Easy to Use &amp; Customize</h2>
-                        <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+                        <h2>Fact3</h2>
+                        <p class="lead mb-0">Unathorized immigrants are almost a quarter of U.S foreign-born population</p>
                     </div>
                 </div>
             </div>
@@ -225,51 +243,36 @@
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-                            <h5>Margaret E.</h5>
+                            <h5>Bárbara </h5>
                             <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-                            <h5>Fred S.</h5>
+                            <h5>Tiago</h5>
                             <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-                            <h5>Sarah W.</h5>
+                            <h5>Raul</h5>
                             <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+
+                            <div class="col-lg-4">
+                                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                                    <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
+                                    <h5>Juan Ramon</h5>
+                                    <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
 
         <!-- Call to Action -->
-        <section class="call-to-action text-white text-center">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-9 mx-auto">
-                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                    </div>
-                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                        <form>
-                            <div class="form-row">
-                                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                    <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Footer -->
         <footer class="footer bg-light">
@@ -278,42 +281,24 @@
                     <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item">
-                                <a href="#">About</a>
+                                <a href="https://getbootstrap.com/docs/4.4/content/images/">Bootstrap</a>
                             </li>
                             <li class="list-inline-item">&sdot;</li>
                             <li class="list-inline-item">
-                                <a href="#">Contact</a>
+                                <a href="https://d3js.org/">D3</a>
                             </li>
                             <li class="list-inline-item">&sdot;</li>
                             <li class="list-inline-item">
-                                <a href="#">Terms of Use</a>
+                                <a href="https://www.census.gov/data/tables/time-series/demo/geographic-mobility/historic.html.">Census Bureu</a>
                             </li>
                             <li class="list-inline-item">&sdot;</li>
                             <li class="list-inline-item">
-                                <a href="#">Privacy Policy</a>
+                                <a href="https://www.mapbox.com/gallery/">MapBox</a>
                             </li>
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Immigration USA 2020. All Rights Reserved.</p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item mr-3">
-                                <a href="#">
-                                    <i class="fab fa-facebook fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item mr-3">
-                                <a href="#">
-                                    <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-instagram fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </footer>
