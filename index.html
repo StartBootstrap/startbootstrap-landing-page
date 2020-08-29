@@ -125,24 +125,8 @@
 
                     </div>
                 </li>
-                <li class="selection">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="well">
-                                <h5>Test Subject ID No.:</h5>
-                                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                            </div>
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Demographic Info</h3>
-                                </div>
-                                <div id="sample-metadata" class="panel-body"></div>
-                            </div>
-                        </div>
-                </li>
-
             </ul>
-            </div>
+        </div>
     </nav>
 
     <main role="main">
@@ -153,54 +137,124 @@
                 <h2 class="display-3">USA IMMIGRATION</h2>
             </div>
         </div>
+        <br>
 
 
-        <!-- Plot Scatter -->
-        <section>
-            <div id="plot"></div>
-        </section>
-
-        <div class="col-sm-6 column">
-            <div id="chart"></div>
-            <div id="tooltip"></div>
-        </div>
-        <div class="col-sm-6 my-auto showcase-text">
-            <h2>Updated For Bootstrap 4</h2>
-            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
-            <script src="assets/js/app_CHORD DIAGRAM.js" type="text/javascript"></script>
-        </div>
-        </div>
-        </div>
-        </div>
-        </section>
-
-        <!-- Image Showcases -->
-        <section class="showcase">
-            <div class="container-fluid p-0">
-                <div class="row no-gutters">
-
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/flags.jpg');"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Fact1</h2>
-                        <p class="lead mb-0">14% of USA population are immigrants
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Select country</h4>
+                    <p>Please select the country of interest.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="well">
+                                <select id="selDataset1" onchange="optionChanged(this.value)"></select>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row no-gutters">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/florida.jpg');"></div>
-                    <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Fact2</h2>
-                        <p class="lead mb-0">Florida is the state with the highest inmmigrant population</p>
+                <div class="col-md-3">
+                    <h4>Select Age</h4>
+                    <p>Please select age of people of interest.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="well">
+                                <select id="selDataset2" onchange="optionChanged(this.value)"></select>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row no-gutters">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('usaborder.jpg');"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Fact3</h2>
-                        <p class="lead mb-0">Unathorized immigrants are almost a quarter of U.S foreign-born population</p>
+                <div class="col-md-3">
+                    <h4>Select education</h4>
+                    <p>Please select the education level.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="well">
+                                <select id="selDataset3" onchange="optionChanged(this.value)"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4>Select Income</h4>
+                    <p>Please select income of people of interest.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="well">
+                                <select id="selDataset4" onchange="optionChanged(this.value)"></select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Plot Scatter -->
+        <!-- <section>
+            <div id="plot"></div>
+        </section> -->
+
+
+        <div class="col-sm-12 column">
+            <h2>Chord Diagram</h2>
+            <p class="lead mb-0">Distribution of migrant form the top 5 Latin countries origins and top 5 state destination.</p>
+            <BR>
+            <BR>
+            <div id="chart"></div>
+            <div id="tooltip"></div>
+            <script src="assets/js/app_CHORD DIAGRAM.js" type="text/javascript"></script>
+        </div>
+
+
+        <!-- Image Showcases -->
+        <style>
+            p {
+                padding-top: 50px;
+                padding-right: 30px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+            }
+        </style>
+        <div style=p>
+            <div class="row no-gutters">
+
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Fully Responsive Design</h2>
+                    <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Fully Responsive Design</h2>
+                    <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Updated For Bootstrap 4</h2>
+                    <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+                </div>
+            </div>
+            <!-- Plot Scatter -->
+            <div id="plot"></div>
+
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Easy to Use &amp; Customize</h2>
+                    <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Testimonials -->
         <section class="testimonials text-center bg-light">
