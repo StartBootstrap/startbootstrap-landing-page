@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Chord Diagram - Phone Brands</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            /*background: url(http://mbostock.github.io/d3/talk/20111018/texture-noise.png);*/
+            overflow: hidden;
+            margin: 0;
+            font-size: 14px;
+            font-family: "Helvetica Neue", Helvetica;
+        }
+        
+        #footer {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            display: block;
+            font-size: 36px;
+            font-weight: 300;
+            text-shadow: 0 1px 0 #fff;
+            top: 640px;
+            right: 140px;
+            text-align: right;
+        }
+        
+        line {
+            stroke: #000;
+            stroke-width: 1.px;
+        }
+        
+        .hint {
+            position: absolute;
+            right: 0;
+            width: 350px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        text {
+            font-size: 10px;
+        }
+        
+        .titles {
+            font-size: 14px;
+        }
+        
+        path.chord {
+            fill-opacity: .80;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cont" class="container-fluid">
+        <div class="row text-center">
+            <div class="col-sm-12 column">
+                <div id="chart"></div>
+                <div id="tooltip"></div>
+            </div>
+
+        </div>
+    </div>
+    <script src="assets/js/app_CHORD DIAGRAM.js"></script>
+</body>
+
+</html>

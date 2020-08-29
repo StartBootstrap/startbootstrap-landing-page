@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        /* body {
+            overflow: hidden;
+            margin: 0;
+            font-size: 14px;
+            font-family: "Helvetica Neue", Helvetica;
+        } */
+        
+        #footer {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            display: block;
+            font-size: 36px;
+            font-weight: 300;
+            text-shadow: 0 1px 0 #fff;
+            top: 640px;
+            right: 140px;
+            text-align: right;
+        }
+        
+        line {
+            stroke: #000;
+            stroke-width: 1.px;
+        }
+        
+        .hint {
+            position: absolute;
+            right: 0;
+            width: 350px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        text {
+            font-size: 10px;
+        }
+        
+        .titles {
+            font-size: 14px;
+        }
+        
+        path.chord {
+            fill-opacity: .80;
+        }
+    </style>
+
+
+
+
+
+
+    <title>Latitude</title>
+</head>
+
+<body>
+    <h1>Latitude Analysis</h1>
+
+    <div id="cont" class="container-fluid">
+        <div class="row text-center">
+            <div class="col-sm-12 column">
+                <div id="chart"></div>
+                <div id="tooltip"></div>
+            </div>
+
+        </div>
+    </div>
+    <script src="assets/js/app_CHORD DIAGRAM.js"></script>
+
+
+    <!-- Optional JavaScript -->
+    <!--<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <a class="navbar-brand" href="index.html">Latitude</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="comparison.html">Comparison</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="data.html" tabindex="-1" aria-disabled="true">Data</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="visual01.html">Temperature (F) vs. Latitude</a>
+                        <a class="dropdown-item" href="visual02.html">Humidity (%) vs. Latitude</a>
+                        <a class="dropdown-item" href="visual03.html">Cloudiness (%) vs. Latitude</a>
+                        <a class="dropdown-item" href="visual04.html">Wind Speed (mph) vs. Latitude</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h2 class="display-3">The Weather Analysis</h2>
+                <p>What’s the Weather Like? Visualize the weather of 500+ cities across the world of varying distance from the equator, comparing: Temperature (F) vs. Latitude, Humidity (%) vs. Latitude, Cloudiness (%) vs. Latitude, and Wind Speed (mph)
+                    vs. Latitude. </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Temperature (F) vs. Latitude</h4>
+                    <p>Analysis of how the Temperature behaves along the Latitude of cities. We can see a strong correlation between these two variables as illustrated on the plot.
+                        <div class="media">
+                            <a href="visual01.html">
+                                <img src="Resources\Latitude_vs_Temperature.png" class="mr-3" alt="Latitude_vs_Temperature.png">
+                            </a>
+                        </div>
+                    </p>
+                    <a href="visual01.html">
+                        <p><button type="button" class="btn btn-primary btn-lg">Review</button></P>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <h4>Humidity (%) vs. Latitude</h4>
+                    <p>In this analysis we found that Humidity is more correlated in cities with Latitude above 0, so it increases when we move to cities with Latitude between 60 to 80.
+                        <div class="media">
+                            <a href="visual02.html">
+                                <img src="Resources\Latitude_vs_Humidity.png" class="mr-3" alt="Latitude_vs_Humidity.png">
+                            </a>
+                        </div>
+                    </p>
+                    <a href="visual02.html">
+                        <p><button type="button" class="btn btn-primary btn-lg">Review</button></p>
+                    </a>
+                </div>
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        </div>
+        <!-- /container -->
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Cloudiness (%) vs. Latitude</h4>
+                    <p>When we analyze how Cloudiness is correlated to Latitude, there is not a clear correlation between two variables because all the points are spread on the plot.
+                        <div class="media">
+                            <a href="visual03.html">
+                                <img src="Resources\Latitude_vs_Cloudiness.png" class="mr-3" alt="Latitude_vs_Cloudiness.png">
+                            </a>
+                        </div>
+                    </p>
+                    <a href="visual03.html">
+                        <p><button type="button" class="btn btn-primary btn-lg">Review</button></p>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <h4>Wind Speed (mph) vs. Latitude</h4>
+                    <p>We conclude here that Wind Speed is not correlated to Latitude. There is not clear correlation between two variables because all the points are spread on the plot.
+                        <div class="media">
+                            <a href="visual04.html">
+                                <img src="Resources\Latitude_vs_WindSpeed.png" class="mr-3" alt="Latitude_vs_WindSpeed">
+                            </a>
+                        </div>
+                    </p>
+                    <a href="visual04.html">
+                        <p><button type="button" class="btn btn-primary btn-lg" href="#">Review</button></p>
+                    </a>
+                </div>
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        </div>
+        <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+        <p>&copy; Data Bootcamp</p>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
