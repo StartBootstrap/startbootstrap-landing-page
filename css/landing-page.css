@@ -124,3 +124,7 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+.dark-mode{
+  filter: invert(1) hue-rotate(180deg);
+}
