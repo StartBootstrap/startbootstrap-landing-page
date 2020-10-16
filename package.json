@@ -29,13 +29,13 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-landing-page.git"
     },
     "dependencies": {
-        "bootstrap": "4.5.3",
+        "bootstrap": "4.5.0",
         "jquery": "3.5.1",
-        "simple-line-icons": "^2.5.5"
+        "simple-line-icons": "^2.4.1"
     },
     "devDependencies": {
-        "browser-sync": "2.26.12",
-        "del": "6.0.0",
+        "browser-sync": "2.26.7",
+        "del": "5.1.0",
         "gulp": "4.0.2",
         "gulp-autoprefixer": "7.0.1",
         "gulp-clean-css": "4.3.0",

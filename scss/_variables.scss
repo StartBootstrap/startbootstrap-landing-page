@@ -1,6 +1,6 @@
 // Brand Colors
 $blue: #3d64ff;
-$indigo: #773dff;
+$indigo: #1420fc;
 $purple: #d73dff;
 $pink: #ff3dc5;
 $red: #ff3d64;
@@ -134,9 +134,8 @@ $transition-fade: opacity .15s linear;
 $transition-collapse: height .35s ease;
 
 // Fonts
-$font-family-sans-serif: acumin-pro, macho, 'Helvetica Neue', Arial, source-han-sans-japanese, ryo-gothic-plusn,
-	sans-serif;
-$font-family-monospace: source-code-pro, input-mono, 'Liberation Mono', 'Courier New', monospace;
+$font-family-sans-serif: acumin-pro, macho, 'Helvetica Neue', Arial, source-han-sans-japanese, ryo-gothic-plusn, sans-serif !default;
+$font-family-monospace: source-code-pro, input-mono, 'Liberation Mono', 'Courier New', monospace !default;
 $font-family-base: $font-family-sans-serif;
 $font-size-base: 1rem;
 $font-size-lg: 1.25rem;
