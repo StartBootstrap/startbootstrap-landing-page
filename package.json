@@ -29,7 +29,6 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-landing-page.git"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "5.13.1",
         "bootstrap": "4.5.0",
         "jquery": "3.5.1",
         "simple-line-icons": "^2.4.1"

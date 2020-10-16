@@ -181,3 +181,11 @@ dist
 
 # and uncomment the following lines
 # .pnp.*
+
+### Adobe ###
+# Adobe Source Files
+*.psd
+*.ai
+*.indd
+*.prproj
+*.aep
