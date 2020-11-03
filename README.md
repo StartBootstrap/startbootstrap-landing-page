@@ -1,10 +1,10 @@
-# [Start Bootstrap - Landing Page](https://startbootstrap.com/themes/landing-page/)
+# [Start Bootstrap - Landing Page](https://startbootstrap.com/theme/landing-page/)
 
-[Landing Page](https://startbootstrap.com/themes/landing-page/) is a multipurpose landing page template for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
+[Landing Page](https://startbootstrap.com/theme/landing-page/) is a multipurpose landing page template for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
 
 ## Preview
 
-[![Landing Page Preview](https://startbootstrap.com/assets/img/screenshots/themes/landing-page.png)](https://startbootstrap.github.io/startbootstrap-landing-page/)
+[![Landing Page Preview](https://assets.startbootstrap.com/img/screenshots/themes/landing-page.png)](https://startbootstrap.github.io/startbootstrap-landing-page/)
 
 **[View Live Preview](https://startbootstrap.github.io/startbootstrap-landing-page/)**
 
@@ -20,7 +20,7 @@
 
 To begin using this template, choose one of the following options to get started:
 
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/themes/landing-page/)
+* [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/landing-page/)
 * Install via npm: `npm i startbootstrap-landing-page`
 * Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-landing-page.git`
 * [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-landing-page)
@@ -47,7 +47,7 @@ You must have npm installed globally in order to use this build environment.
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-landing-page/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/themes/landing-page/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-landing-page/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/theme/landing-page/).
 
 ## About
 
@@ -56,10 +56,10 @@ Start Bootstrap is an open source library of free Bootstrap templates and themes
 * <https://startbootstrap.com>
 * <https://twitter.com/SBootstrap>
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**.
+Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
 
-* <http://davidmiller.io>
-* <https://twitter.com/davidmillerskt>
+* <https://davidmiller.io>
+* <https://twitter.com/davidmillerhere>
 * <https://github.com/davidtmiller>
 
 Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
