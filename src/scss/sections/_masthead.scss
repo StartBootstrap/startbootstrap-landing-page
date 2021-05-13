@@ -1,3 +1,7 @@
+// 
+// Masthead
+// 
+
 header.masthead {
     position: relative;
     background-color: $gray-800;
@@ -6,14 +10,15 @@ header.masthead {
     padding-top: 8rem;
     padding-bottom: 8rem;
 
-    .overlay {
+    &:before {
+        content: '';
         position: absolute;
-        background-color: $gray-900;
+        background-color: mix($gray-900, $primary, 75%);
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
-        opacity: 0.3;
+        opacity: 0.5;
     }
 
     h1 {
