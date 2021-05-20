@@ -8,10 +8,8 @@
         <title>Landing Page - Start Bootstrap Theme</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Simple line icons-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -22,22 +20,25 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <a class="btn btn-primary" href="#!">Sign In</a>
+                <a class="btn btn-primary" href="#signup">Sign Up</a>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead text-white text-center">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-9 mx-auto"><h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1></div>
-                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                        <form>
-                            <div class="form-row">
-                                <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..." /></div>
-                                <div class="col-12 col-md-3"><button class="btn btn-block btn-lg btn-primary" type="submit">Sign up!</button></div>
-                            </div>
-                        </form>
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
+                            <!-- Signup form-->
+                            <form>
+                                <div class="input-group input-group-lg">
+                                    <input class="form-control" type="text" placeholder="Enter your email..." aria-label="Enter your email..." aria-describedby="button-submit" />
+                                    <button class="btn btn-primary" id="button-submit" type="button">Sign up!</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,21 +49,21 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="icon-screen-desktop m-auto text-primary"></i></div>
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
                             <h3>Fully Responsive</h3>
                             <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="icon-layers m-auto text-primary"></i></div>
-                            <h3>Bootstrap 4 Ready</h3>
-                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                            <h3>Bootstrap 5 Ready</h3>
+                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="icon-check m-auto text-primary"></i></div>
+                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
                             <h3>Easy to Use</h3>
                             <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
                         </div>
@@ -73,21 +74,21 @@
         <!-- Image Showcases-->
         <section class="showcase">
             <div class="container-fluid p-0">
-                <div class="row no-gutters">
+                <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2>Fully Responsive Design</h2>
                         <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
                     </div>
                 </div>
-                <div class="row no-gutters">
+                <div class="row g-0">
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Updated For Bootstrap 4</h2>
-                        <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+                        <h2>Updated For Bootstrap 5</h2>
+                        <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
                     </div>
                 </div>
-                <div class="row no-gutters">
+                <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2>Easy to Use & Customize</h2>
@@ -126,16 +127,16 @@
             </div>
         </section>
         <!-- Call to Action-->
-        <section class="call-to-action text-white text-center">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-9 mx-auto"><h2 class="mb-4">Ready to get started? Sign up now!</h2></div>
-                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <section class="call-to-action text-white text-center" id="signup">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+                        <!-- Signup form-->
                         <form>
-                            <div class="form-row">
-                                <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..." /></div>
-                                <div class="col-12 col-md-3"><button class="btn btn-block btn-lg btn-primary" type="submit">Sign up!</button></div>
+                            <div class="input-group input-group-lg">
+                                <input class="form-control" type="text" placeholder="Enter your email..." aria-label="Enter your email..." aria-describedby="button-submit" />
+                                <button class="btn btn-primary" id="button-submit" type="button">Sign up!</button>
                             </div>
                         </form>
                     </div>
@@ -146,7 +147,7 @@
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><a href="#!">About</a></li>
                             <li class="list-inline-item">⋅</li>
@@ -156,18 +157,18 @@
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">© Your Website 2021. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2021. All Rights Reserved.</p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
-                            <li class="list-inline-item mr-3">
-                                <a href="#!"><i class="fab fa-facebook fa-2x fa-fw"></i></a>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
                             </li>
-                            <li class="list-inline-item mr-3">
-                                <a href="#!"><i class="fab fa-twitter-square fa-2x fa-fw"></i></a>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!"><i class="fab fa-instagram fa-2x fa-fw"></i></a>
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -175,8 +176,7 @@
             </div>
         </footer>
         <!-- Bootstrap core JS-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>

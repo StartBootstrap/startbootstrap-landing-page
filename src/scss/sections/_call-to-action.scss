@@ -1,3 +1,7 @@
+// 
+// Call to action
+// 
+
 .call-to-action {
     position: relative;
     background-color: $gray-800;
@@ -6,13 +10,14 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
 
-    .overlay {
+    &:before {
+        content: '';
         position: absolute;
-        background-color: $gray-900;
+        background-color: mix($gray-900, $primary, 75%);
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
-        opacity: 0.3;
+        opacity: 0.5;
     }
 }
