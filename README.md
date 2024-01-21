@@ -1,8 +1,8 @@
 # [Start Bootstrap - Landing Page](https://startbootstrap.com/theme/landing-page/)
 
-[Landing Page](https://startbootstrap.com/theme/landing-page/) is a multipurpose landing page template for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
-
-## Preview v3
+[Landing Page](https://startbootstrap.com/theme/landing-page/) is a multipurpose landing page template for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).https://github.com/bondchan921/startbootstrap-landing-page/blob/master/README.md
+ 
+## Preview v3 -04
 
 [![Landing Page Preview](https://assets.startbootstrap.com/img/screenshots/themes/landing-page.png)](https://startbootstrap.github.io/startbootstrap-landing-page/)
 
