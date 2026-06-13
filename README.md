@@ -1,69 +1,78 @@
-# [Start Bootstrap - Landing Page](https://startbootstrap.com/theme/landing-page/)
+# Accessibility Remediation — StartBootstrap Landing Page
 
-[Landing Page](https://startbootstrap.com/theme/landing-page/) is a multipurpose landing page template for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
+> A WCAG 2.2 AA accessibility remediation case study on a real, widely-used Bootstrap 5 template.
 
-## Preview
+**Live demo (remediated):** [Remediation landing page](https://pampott.github.io/startbootstrap-landing-page/)
+**Original template:** [startbootstrap.github.io/startbootstrap-landing-page](https://startbootstrap.github.io/startbootstrap-landing-page/)
+**Full audit (FR + EN):** [`/audit-accessibilite`](./audit-accessibilite)
 
-[![Landing Page Preview](https://assets.startbootstrap.com/img/screenshots/themes/landing-page.png)](https://startbootstrap.github.io/startbootstrap-landing-page/)
+---
 
-**[View Live Preview](https://startbootstrap.github.io/startbootstrap-landing-page/)**
+## Context
 
-## Status
+The [StartBootstrap Landing Page](https://github.com/StartBootstrap/startbootstrap-landing-page) is one of the most popular free themes in the Bootstrap ecosystem. It looks professional, deploys in minutes, and is used as-is by thousands of websites. But behind the polished appearance, a keyboard user couldn't skip past the navigation to reach the content. A screen reader user heard decorative icons announced as noise, found no page landmarks, and encountered forms with no labels — just grey placeholder text that vanished on input.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-landing-page/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-landing-page.svg)](https://www.npmjs.com/package/startbootstrap-landing-page)
+This isn't a theoretical scenario. It's the daily reality for millions of users: a site that *works* visually but is *silent or chaotic* for anyone not using a mouse and a screen.
 
-## Download and Installation
+This project takes the template as-is and brings it to **WCAG 2.2 AA** conformance — without changing its visual design. The goal: demonstrate accessibility *remediation* of existing code, the kind of work most real-world projects actually need.
 
-To begin using this template, choose one of the following options to get started:
+## Method
 
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/landing-page/)
-* Install via npm: `npm i startbootstrap-landing-page`
-* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-landing-page.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-landing-page)
+1. **Audit** — manual review + automated testing (axe DevTools, keyboard navigation, screen reader, contrast checks)
+2. **Document** — every issue logged with its WCAG criterion, user impact, and fix (see [`/audit-accessibilite`](./audit-accessibilite))
+3. **Remediate** — fixes applied to the Pug/SCSS source, recompiled to `dist/`
+4. **Verify** — re-tested against each criterion
 
-## Usage
+## Issues found & fixed
 
-### Basic Usage
+| # | Issue | WCAG criterion | Fix |
+|---|-------|----------------|-----|
+| 1 | No way to bypass nav for keyboard users | 2.4.1 Bypass Blocks | Added a **skip link** ("Skip to main content") revealed on focus |
+| 2 | No `main` landmark | 1.3.1 Info & Relationships | Wrapped content in `<main id="main">` |
+| 3 | Form inputs relied on placeholder only | 1.3.1, 3.3.2 Labels | Added `<label class="visually-hidden">` to both forms |
+| 4 | "Submit" button disabled via CSS class only | 4.1.2 Name, Role, Value | Replaced `.disabled` class with the real `disabled` attribute |
+| 5 | Duplicate `id` values across the two forms | 4.1.1 Parsing | Renamed footer form IDs (`emailAddressBelow`, `submitButtonFooter`, …) |
+| 6 | Broken heading hierarchy (h3/h5, no h2) | 1.3.1, 2.4.6 Headings | Corrected to a logical h1 → h2 → h3 order |
+| 7 | Decorative icons exposed to screen readers | 1.1.1 Non-text Content | Added `aria-hidden="true"` to Bootstrap icons |
+| 8 | Meaningful showcase images set as CSS backgrounds | 1.1.1 Non-text Content | Added `role="img"` + descriptive `aria-label` |
+| 9 | Testimonial images had placeholder `alt="..."` | 1.1.1 Non-text Content | Set `alt=""` (decorative — names are in adjacent headings) |
+| 10 | Icon-only social links had no accessible name | 2.4.4, 4.1.2 | Added `aria-label` (Facebook / Twitter / Instagram) + `rel="noopener"` |
+| 11 | Placeholder `href="#!"` links | 2.4.4 Link Purpose | Normalized link targets |
+| 12 | Empty meta description / author | Best practice (SEO + context) | Added meaningful values |
 
-After downloading, simply edit the HTML and CSS files included with `dist` directory. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+## Key fixes explained
 
-### Advanced Usage
+**Ghost forms.** Both signup forms relied solely on placeholders to identify fields. A screen reader announced an unnamed input field. The fix: visually hidden `<label>` elements present for assistive technology. An additional detail: the "Submit" button was disabled via a CSS class (`.disabled`) with no semantic effect — a keyboard user could still activate it. Replaced with the native `disabled` attribute.
 
-Clone the source files of the theme and navigate into the theme's root directory. Run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `package.json` file to see which scripts are included.
+**Decorative vs. meaningful images — backwards.** Bootstrap icons (purely decorative) were exposed to screen readers, creating noise. Conversely, the showcase section images — which carried meaning — were set as CSS backgrounds, completely invisible to assistive technology. Mirror fix: `aria-hidden="true"` on icons, `role="img"` + descriptive `aria-label` on meaningful backgrounds.
 
-#### npm Scripts
+**Missing page structure.** No `<main>` landmark, no skip link, a broken heading hierarchy (h1 → h3 → h5, skipping h2). A screen reader user had no way to understand the page structure or navigate efficiently. Complete rebuild of the h1 → h2 → h3 hierarchy and addition of a skip link visible on focus.
 
-* `npm run build` builds the project - this builds assets, HTML, JS, and CSS into `dist`
-* `npm run build:assets` copies the files in the `src/assets/` directory into `dist`
-* `npm run build:pug` compiles the Pug located in the `src/pug/` directory into `dist`
-* `npm run build:scripts` brings the `src/js/scripts.js` file into `dist`
-* `npm run build:scss` compiles the SCSS files located in the `src/scss/` directory into `dist`
-* `npm run clean` deletes the `dist` directory to prepare for rebuilding the project
-* `npm run start:debug` runs the project in debug mode
-* `npm start` or `npm run start` runs the project, launches a live preview in your default browser, and watches for changes made to files in `src`
+## Results
 
-You must have npm installed in order to use this build environment.
+- **Keyboard navigation:** complete page traversal with a functional skip link and logical focus order
+- **Screen reader:** correct landmarks, labelled forms, named controls, no noise from decorative elements
+- **Structure:** valid heading hierarchy and unique IDs
+- **Visual integrity:** the original design is strictly preserved — only the underlying semantics changed
+- **12 WCAG 2.2 AA violations** documented and fixed, covering **8 distinct success criteria**
 
-## Bugs and Issues
+See the before/after breakdown and annotated screenshots in [`/audit-accessibilite`](./audit-accessibilite).
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-landing-page/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/theme/landing-page/).
+## What this project demonstrates
 
-## About
+This case shows a remediation approach that respects existing work: no redesign, no "I would have done it differently," no visual regression. It's the ability to intervene surgically on production code — understand what actually blocks users, fix at the source (not in compiled HTML), document every decision, and deliver a verifiable result. This is exactly what a project needs when it must become compliant without rebuilding everything.
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+## Tools
 
-* <https://startbootstrap.com>
-* <https://twitter.com/SBootstrap>
+axe DevTools · keyboard testing · screen reader (VoiceOver / NVDA) · WebAIM Contrast Checker · WCAG 2.2 AA reference
 
-Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
+## Stack
 
-* <https://davidmiller.io>
-* <https://twitter.com/davidmillerhere>
-* <https://github.com/davidtmiller>
+Pug · SCSS · Bootstrap 5 — fixes applied at the source level and recompiled.
 
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+---
 
-## Copyright and License
+**Paloma Celini** — Front-end developer specialised in web accessibility (WCAG/RGAA) & design systems.
+[Portfolio](https://pampott.github.io/a11y-ui-landing/) · [a11y-ui design system](https://github.com/Pampott/a11y-ui) · [LinkedIn](https://www.linkedin.com/in/paloma-celini/)
 
-Copyright 2013-2023 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE) license.
+> This is an independent accessibility case study. Not affiliated with or endorsed by StartBootstrap. Original template under its own MIT license.

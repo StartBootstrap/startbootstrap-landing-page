@@ -5,4 +5,16 @@
 footer.footer {
     padding-top: 4rem;
     padding-bottom: 4rem;
+
+    a {
+        color: #0a58ca; // 6.1:1 sur fond #f8f9fa (>= 4.5:1)
+
+        &:hover {
+            color: #094bb0;
+        }
+    }
+
+    .text-muted {
+        color: #515860 !important; // 6.8:1 sur fond #f8f9fa (>= 4.5:1)
+    }
 }

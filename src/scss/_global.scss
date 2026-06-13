@@ -1,5 +1,17 @@
-// 
+//
 // Global
-// 
+//
 
 // Use this file to add styling to your theme
+
+// Skip link — visible only when focused
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #0a58ca;
+    border-bottom-right-radius: 0.25rem;
+}

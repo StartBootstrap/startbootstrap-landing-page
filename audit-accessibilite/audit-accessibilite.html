@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit d'accessibilité — Landing Page (WCAG 2.2 AA)</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface:#f6f8fa; --ink:#1a1f24; --muted:#586069; --line:#e1e4e8;
+    --crit:#e11d48; --maj:#d97706; --min:#2563eb; --ok:#16a34a;
+    --crit-bg:#fdeaee; --maj-bg:#fdf3e6; --min-bg:#eaf0fd; --ok-bg:#e7f6ec;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.65;background:var(--bg)}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 28px 80px}
+  header.doc{border-bottom:3px solid var(--ink);padding-bottom:24px;margin-bottom:36px}
+  h1{font-size:30px;margin:0 0 6px;line-height:1.25}
+  h2{font-size:22px;margin:48px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h3{font-size:17px;margin:30px 0 8px}
+  .sub{color:var(--muted);font-size:15px;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:13px}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
+  .card .n{font-size:30px;font-weight:700;line-height:1}
+  .card .l{font-size:12px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
+  .card.crit .n{color:var(--crit)} .card.maj .n{color:var(--maj)} .card.min .n{color:var(--min)} .card.tot .n{color:var(--ink)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--surface);font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  td code{background:var(--surface);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .sev{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;white-space:nowrap}
+  .sev.crit{background:var(--crit-bg);color:var(--crit)} .sev.maj{background:var(--maj-bg);color:var(--maj)}
+  .sev.min{background:var(--min-bg);color:var(--min)} .sev.ok{background:var(--ok-bg);color:var(--ok)}
+  .pass{color:var(--ok);font-weight:700}.fail{color:var(--crit);font-weight:700}
+  figure{margin:18px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+  figure img{display:block;width:100%}
+  figcaption{padding:9px 14px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+  .issue{border:1px solid var(--line);border-left-width:5px;border-radius:8px;padding:16px 18px;margin:16px 0}
+  .issue.crit{border-left-color:var(--crit)} .issue.maj{border-left-color:var(--maj)} .issue.min{border-left-color:var(--min)}
+  .issue h3{margin:0 0 6px;font-size:16px}
+  .issue .tags{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 10px}
+  .issue .tags span{font-size:11.5px;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:2px 8px;color:var(--muted)}
+  .issue p{margin:6px 0}
+  .note{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:14px;color:var(--muted)}
+  ul{margin:8px 0;padding-left:22px} li{margin:4px 0}
+  .legend{font-size:13px;color:var(--muted)}
+  .langbar{display:flex;justify-content:flex-end;gap:6px;margin-bottom:8px}
+  .langbar a{text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-size:13px}
+  .langbar a[aria-current="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  @media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar"><a href="audit-accessibilite.html" aria-current="true" lang="fr">FR</a><a href="audit-accessibilite.en.html" lang="en" hreflang="en">EN</a></div>
+
+<header class="doc">
+  <h1>Audit d'accessibilité — Landing Page</h1>
+  <p class="sub">Thème « Start Bootstrap – Landing Page » · page <code>dist/index.html</code></p>
+  <div class="meta">
+    <span class="chip"><strong>Référentiel :</strong> WCAG 2.2 niveau AA</span>
+    <span class="chip"><strong>Date :</strong> 6 juin 2026</span>
+    <span class="chip"><strong>Méthode :</strong> scan axe-core + revue manuelle du code + tests de contraste</span>
+    <span class="chip"><strong>Portée :</strong> page d'accueil (desktop + mobile)</span>
+  </div>
+</header>
+
+<section>
+  <h2>1. Résumé</h2>
+  <p>La page repose sur Bootstrap 5, qui fournit une base correcte (HTML sémantique de sections, focus visibles par défaut, zoom autorisé, structure responsive). L'audit relève néanmoins <strong>14 problèmes</strong> dont plusieurs bloquent réellement les utilisateurs de lecteurs d'écran et de clavier. Les points les plus critiques concernent les <strong>champs de formulaire sans étiquette</strong> et les <strong>liens d'icônes sociales sans intitulé accessible</strong>.</p>
+  <div class="cards">
+    <div class="card tot"><div class="n">14</div><div class="l">Problèmes</div></div>
+    <div class="card crit"><div class="n">2</div><div class="l">Critiques</div></div>
+    <div class="card maj"><div class="n">5</div><div class="l">Majeurs</div></div>
+    <div class="card min"><div class="n">7</div><div class="l">Mineurs</div></div>
+  </div>
+  <p class="legend"><span class="sev crit">Critique</span> bloque l'accès à une fonctionnalité ou une information &nbsp;·&nbsp; <span class="sev maj">Majeur</span> dégrade fortement l'expérience d'une population &nbsp;·&nbsp; <span class="sev min">Mineur</span> à corriger pour la conformité / la qualité.</p>
+  <div class="note"><strong>Note sur les captures :</strong> le site a été lancé en local et capturé via un navigateur headless. Les icônes (fonctionnalités et réseaux sociaux) proviennent d'un CDN externe non joignable depuis l'environnement de capture : elles apparaissent donc vides sur certaines captures. Cela n'affecte pas les constats, établis à partir du code source HTML/CSS.</div>
+</section>
+
+<section>
+  <h2>2. Vue d'ensemble de la page</h2>
+  <figure><img src="screenshots/desktop-full.png" alt="Capture pleine page de la landing page en version bureau"><figcaption>Page complète (bureau, 1280 px).</figcaption></figure>
+</section>
+
+<section>
+  <h2>3. Tableau de synthèse des problèmes</h2>
+  <table>
+    <thead><tr><th>#</th><th>Problème</th><th>Critère WCAG 2.2</th><th>Sévérité</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Champs e-mail sans <code>&lt;label&gt;</code> (placeholder seul)</td><td>1.3.1 · 3.3.2 · 4.1.2</td><td><span class="sev crit">Critique</span></td></tr>
+      <tr><td>2</td><td>Liens d'icônes sociales sans nom accessible</td><td>2.4.4 · 4.1.2</td><td><span class="sev crit">Critique</span></td></tr>
+      <tr><td>3</td><td>Contraste insuffisant (liens et copyright du pied de page)</td><td>1.4.3</td><td><span class="sev maj">Majeur</span></td></tr>
+      <tr><td>4</td><td>Absence de landmark <code>&lt;main&gt;</code> ; contenu hors repères</td><td>1.3.1</td><td><span class="sev maj">Majeur</span></td></tr>
+      <tr><td>5</td><td>Pas de lien d'évitement (« aller au contenu »)</td><td>2.4.1</td><td><span class="sev maj">Majeur</span></td></tr>
+      <tr><td>6</td><td>Hiérarchie des titres rompue (h1→h3, h2→h5)</td><td>1.3.1</td><td><span class="sev maj">Majeur</span></td></tr>
+      <tr><td>7</td><td>Bouton « Submit » faussement désactivé (classe seule)</td><td>4.1.2 · 1.4.3</td><td><span class="sev maj">Majeur</span></td></tr>
+      <tr><td>8</td><td>Texte alternatif non pertinent (<code>alt="..."</code>) sur les témoignages</td><td>1.1.1</td><td><span class="sev min">Mineur</span></td></tr>
+      <tr><td>9</td><td>Icônes décoratives non masquées aux technologies d'assistance</td><td>1.1.1</td><td><span class="sev min">Mineur</span></td></tr>
+      <tr><td>10</td><td>Identifiants <code>id</code> dupliqués entre les deux formulaires</td><td>4.1.1*</td><td><span class="sev min">Mineur</span></td></tr>
+      <tr><td>11</td><td>Liens factices <code>href="#!"</code> (navbar, pied de page, réseaux)</td><td>2.4.4</td><td><span class="sev min">Mineur</span></td></tr>
+      <tr><td>12</td><td>Messages d'erreur dépendants d'un script externe + <code>text-white</code></td><td>3.3.1</td><td><span class="sev min">Mineur</span></td></tr>
+      <tr><td>13</td><td>Texte sur image (masthead) — contraste tributaire de l'image</td><td>1.4.3</td><td><span class="sev min">Mineur</span></td></tr>
+      <tr><td>14</td><td>Métadonnées vides (<code>description</code>, <code>author</code>) et titre générique</td><td>Bonne pratique</td><td><span class="sev min">Mineur</span></td></tr>
+    </tbody>
+  </table>
+  <p class="legend">* La règle 4.1.1 (Analyse syntaxique) a été <em>retirée</em> de WCAG 2.2 : les <code>id</code> dupliqués ne constituent plus un échec formel, mais restent un risque réel pour les associations ARIA et le script — d'où un classement « mineur ».</p>
+</section>
+
+<section>
+  <h2>4. Constats détaillés par principe</h2>
+
+  <h3>Perceptible</h3>
+
+  <div class="issue crit">
+    <h3>① Champs e-mail sans étiquette programmatique</h3>
+    <div class="tags"><span>WCAG 1.3.1</span><span>WCAG 3.3.2</span><span>WCAG 4.1.2</span><span>Critique</span></div>
+    <p>Les deux champs <code>#emailAddress</code> et <code>#emailAddressBelow</code> n'ont aucun <code>&lt;label&gt;</code> associé : ils s'appuient uniquement sur l'attribut <code>placeholder</code>. Aucun <code>&lt;label&gt;</code> n'est présent dans toute la page. Pour un lecteur d'écran, le champ est annoncé « zone de saisie, vide » sans indiquer ce qu'il faut saisir ; de plus, le texte indicatif disparaît dès la première frappe, ce qui pénalise tous les utilisateurs.</p>
+    <figure><img src="screenshots/annot-02-masthead.png" alt="Formulaire du masthead : le champ e-mail est entouré, signalant l'absence d'étiquette"><figcaption>Masthead — champ e-mail sans <code>&lt;label&gt;</code> (placeholder seul).</figcaption></figure>
+  </div>
+
+  <div class="issue min">
+    <h3>⑧ Texte alternatif non pertinent sur les témoignages</h3>
+    <div class="tags"><span>WCAG 1.1.1</span><span>Mineur</span></div>
+    <p>Les trois portraits utilisent <code>alt="..."</code>. Un lecteur d'écran lit littéralement « points de suspension ». Ces images étant illustratives (le nom est déjà en texte juste à côté), elles devraient porter un <code>alt=""</code> (image décorative) — ou un texte descriptif si elles sont jugées porteuses d'information.</p>
+    <figure><img src="screenshots/annot-05-testimonials.png" alt="Section témoignages avec les images dont le texte alternatif est signalé"><figcaption>Témoignages — <code>alt="..."</code> à remplacer.</figcaption></figure>
+  </div>
+
+  <div class="issue min">
+    <h3>⑨ Icônes décoratives non masquées</h3>
+    <div class="tags"><span>WCAG 1.1.1</span><span>Bonne pratique</span><span>Mineur</span></div>
+    <p>Les icônes de la grille de fonctionnalités (<code>bi-window</code>, <code>bi-layers</code>, <code>bi-terminal</code>) sont des <code>&lt;i&gt;</code> purement décoratifs. Elles devraient porter <code>aria-hidden="true"</code> pour ne pas générer de bruit dans les technologies d'assistance.</p>
+  </div>
+
+  <div class="issue min">
+    <h3>⑬ Texte blanc sur image de fond (masthead)</h3>
+    <div class="tags"><span>WCAG 1.4.3</span><span>Mineur</span></div>
+    <p>Le titre et le formulaire sont en blanc sur une photo, avec un voile sombre semi-transparent (<code>opacity:0.5</code>). Le rendu observé est lisible, mais le contraste dépend de la photo : tout remplacement d'image par une version plus claire ferait échouer le critère. Recommandation : garantir un voile suffisamment opaque ou un dégradé pour sécuriser ≥ 4.5:1 quelle que soit l'image.</p>
+    <figure><img src="screenshots/02-masthead.png" alt="Masthead avec titre blanc sur image de fond"><figcaption>Masthead — contraste à sécuriser au niveau du voile, indépendamment de l'image.</figcaption></figure>
+  </div>
+
+  <h3>Utilisable</h3>
+
+  <div class="issue crit">
+    <h3>② Liens d'icônes sociales sans nom accessible</h3>
+    <div class="tags"><span>WCAG 2.4.4</span><span>WCAG 4.1.2</span><span>Critique</span></div>
+    <p>Les trois liens réseaux sociaux du pied de page ne contiennent qu'une icône (<code>&lt;a&gt;&lt;i class="bi-facebook"&gt;&lt;/i&gt;&lt;/a&gt;</code>), sans texte ni <code>aria-label</code>. Confirmé par axe-core (règle <code>link-name</code>, impact « serious ») : ces liens sont annoncés « lien » sans destination. Un internaute au lecteur d'écran ne peut pas savoir où ils mènent.</p>
+    <figure><img src="screenshots/annot-07-footer.png" alt="Pied de page : liens d'icônes sociales entourés à droite, liens et copyright signalés à gauche"><figcaption>Pied de page — liens d'icônes sociales (droite) sans intitulé ; problèmes de contraste à gauche.</figcaption></figure>
+  </div>
+
+  <div class="issue maj">
+    <h3>⑤ Absence de lien d'évitement</h3>
+    <div class="tags"><span>WCAG 2.4.1</span><span>Majeur</span></div>
+    <p>Aucun lien « Aller au contenu » n'est proposé en tête de page. Combiné à l'absence de <code>&lt;main&gt;</code> (problème ④), les utilisateurs au clavier doivent traverser la navigation à chaque chargement sans pouvoir l'éviter.</p>
+  </div>
+
+  <div class="issue maj">
+    <h3>⑦ Bouton « Submit » faussement désactivé</h3>
+    <div class="tags"><span>WCAG 4.1.2</span><span>WCAG 1.4.3</span><span>Majeur</span></div>
+    <p>Le bouton porte la classe <code>.disabled</code> mais <em>pas</em> l'attribut <code>disabled</code> ni <code>aria-disabled</code>. Sur un <code>&lt;button&gt;</code>, la classe Bootstrap n'empêche pas l'activation au clavier : l'état perçu (grisé, <code>opacity:.65</code>) ne correspond pas à l'état réel transmis aux technologies d'assistance. L'opacité réduite dégrade en outre le contraste du libellé sous le seuil de 4.5:1.</p>
+    <figure><img src="screenshots/08-focus-submit.png" alt="Masthead avec le bouton Submit ayant le focus"><figcaption>Bouton « Submit » avec focus — état désactivé non transmis programmatiquement.</figcaption></figure>
+  </div>
+
+  <div class="issue min">
+    <h3>⑪ Liens factices <code>href="#!"</code></h3>
+    <div class="tags"><span>WCAG 2.4.4</span><span>Mineur</span></div>
+    <p>La marque de la navbar, les liens du pied de page (About, Contact, Terms of Use, Privacy Policy) et les réseaux sociaux pointent tous vers <code>#!</code>, une ancre inexistante. Ces liens sont focalisables mais ne mènent nulle part : ils trompent l'utilisateur et brouillent le but du lien. À renseigner avec de vraies destinations (ou retirer).</p>
+  </div>
+
+  <h3>Compréhensible</h3>
+
+  <div class="issue maj">
+    <h3>⑥ Hiérarchie des titres rompue</h3>
+    <div class="tags"><span>WCAG 1.3.1</span><span>Majeur</span></div>
+    <p>L'ordre des niveaux saute : après le <code>h1</code> du masthead, la grille de fonctionnalités utilise des <code>h3</code> (le niveau <code>h2</code> est sauté) ; plus bas, les témoignages passent d'un <code>h2</code> de section à des <code>h5</code>. Confirmé par axe-core (<code>heading-order</code>). La navigation par titres, très utilisée au lecteur d'écran, devient illogique.</p>
+    <figure><img src="screenshots/annot-03-features.png" alt="Grille de fonctionnalités avec les titres h3 signalés comme saut de niveau"><figcaption>Fonctionnalités — <code>h3</code> directement sous le <code>h1</code> (niveau <code>h2</code> manquant).</figcaption></figure>
+  </div>
+
+  <div class="issue min">
+    <h3>⑫ Messages d'erreur fragiles</h3>
+    <div class="tags"><span>WCAG 3.3.1</span><span>Mineur</span></div>
+    <p>L'identification des erreurs de saisie repose entièrement sur le script externe SB Forms (<code>data-sb-validations</code>). Sans token API actif ou si le script ne charge pas, aucun message n'apparaît. Les blocs <code>.invalid-feedback</code> en <code>text-white</code> ne sont par ailleurs lisibles que sur fond sombre. Prévoir une validation HTML native (<code>required</code>, <code>type="email"</code>) comme socle, indépendante du script.</p>
+  </div>
+
+  <h3>Robuste</h3>
+
+  <div class="issue min">
+    <h3>⑩ Identifiants dupliqués</h3>
+    <div class="tags"><span>WCAG 4.1.1 (retiré en 2.2)</span><span>Mineur</span></div>
+    <p>Les <code>id</code> <code>submitButton</code>, <code>submitSuccessMessage</code> et <code>submitErrorMessage</code> existent en double (masthead + appel à l'action). Même si 4.1.1 ne s'applique plus en WCAG 2.2, des <code>id</code> uniques restent indispensables pour fiabiliser les associations <code>label/for</code>, les références ARIA et le ciblage par script.</p>
+  </div>
+</section>
+
+<section>
+  <h2>5. Vérification des contrastes</h2>
+  <p>Ratios calculés à partir des couleurs réellement appliquées (extraites du DOM rendu), selon la formule WCAG 2.x.</p>
+  <table>
+    <thead><tr><th>Élément</th><th>Texte</th><th>Fond</th><th>Ratio</th><th>Requis</th><th>Résultat</th></tr></thead>
+    <tbody>
+      <tr><td>Liens du pied de page</td><td><code>#0d6efd</code></td><td><code>#f8f9fa</code></td><td>4.27:1</td><td>4.5:1</td><td class="fail">✗ Échec</td></tr>
+      <tr><td>Copyright (<code>.text-muted</code>)</td><td><code>#6c757d</code></td><td><code>#f8f9fa</code></td><td>4.45:1</td><td>4.5:1</td><td class="fail">✗ Échec</td></tr>
+      <tr><td>Bouton primaire (libellé)</td><td><code>#ffffff</code></td><td><code>#0d6efd</code></td><td>4.50:1</td><td>4.5:1</td><td class="pass">✓ Limite</td></tr>
+      <tr><td>Texte « lead » fonctionnalités</td><td><code>#212529</code></td><td><code>#f8f9fa</code></td><td>14.63:1</td><td>4.5:1</td><td class="pass">✓ OK</td></tr>
+      <tr><td>Titres de section</td><td><code>#212529</code></td><td><code>#f8f9fa</code></td><td>14.63:1</td><td>3:1</td><td class="pass">✓ OK</td></tr>
+      <tr><td>Texte des témoignages</td><td><code>#212529</code></td><td><code>#f8f9fa</code></td><td>14.63:1</td><td>4.5:1</td><td class="pass">✓ OK</td></tr>
+      <tr><td>Texte des champs</td><td><code>#212529</code></td><td><code>#ffffff</code></td><td>15.43:1</td><td>4.5:1</td><td class="pass">✓ OK</td></tr>
+    </tbody>
+  </table>
+  <p class="legend">Le bouton primaire est exactement à la limite (4.50:1) : toute variation de teinte le ferait échouer, et il échoue en l'état « désactivé » (opacité 0.65). À surveiller.</p>
+</section>
+
+<section>
+  <h2>6. Navigation au clavier</h2>
+  <table>
+    <thead><tr><th>Élément</th><th>Focalisable</th><th>Focus visible</th><th>Observation</th></tr></thead>
+    <tbody>
+      <tr><td>Liens navbar / pied de page</td><td>Oui</td><td>Oui (anneau Bootstrap)</td><td>Mènent vers <code>#!</code> (sans effet) — voir ⑪</td></tr>
+      <tr><td>Champs e-mail</td><td>Oui</td><td>Oui</td><td>Rôle correct mais sans nom accessible — voir ①</td></tr>
+      <tr><td>Bouton « Submit »</td><td>Oui</td><td>Oui</td><td>Reste activable malgré l'apparence désactivée — voir ⑦</td></tr>
+      <tr><td>Liens réseaux sociaux</td><td>Oui</td><td>Oui</td><td>Annoncés sans intitulé — voir ②</td></tr>
+      <tr><td>Saut au contenu</td><td>—</td><td>—</td><td>Absent — voir ⑤</td></tr>
+    </tbody>
+  </table>
+  <p class="legend">WCAG 2.2 — 2.4.11 « Focus non masqué (minimum) » : conforme, la barre de navigation est <code>static-top</code> (non fixe), elle ne recouvre donc jamais l'élément ayant le focus.</p>
+</section>
+
+<section>
+  <h2>7. Restitution au lecteur d'écran</h2>
+  <table>
+    <thead><tr><th>Élément</th><th>Annoncé comme</th><th>Problème</th></tr></thead>
+    <tbody>
+      <tr><td>Champ e-mail</td><td>« Zone de saisie, vide »</td><td>Aucun intitulé (placeholder ignoré) — ①</td></tr>
+      <tr><td>Lien Facebook/Twitter/Instagram</td><td>« Lien »</td><td>Pas de nom accessible — ②</td></tr>
+      <tr><td>Portraits témoignages</td><td>« Image, points de suspension »</td><td><code>alt="..."</code> — ⑧</td></tr>
+      <tr><td>Structure de page</td><td>Aucun repère « contenu principal »</td><td>Pas de <code>&lt;main&gt;</code> — ④</td></tr>
+      <tr><td>Navigation par titres</td><td>h1 → h3 → … → h5</td><td>Niveaux sautés — ⑥</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>8. Couverture des nouveaux critères WCAG 2.2</h2>
+  <table>
+    <thead><tr><th>Critère (AA, nouveau en 2.2)</th><th>État</th></tr></thead>
+    <tbody>
+      <tr><td>2.4.11 Focus non masqué (minimum)</td><td class="pass">Conforme (navbar non fixe)</td></tr>
+      <tr><td>2.5.7 Mouvements de glissement</td><td class="pass">Non applicable</td></tr>
+      <tr><td>2.5.8 Taille de cible (minimum, 24 px)</td><td class="pass">OK — liens texte en ligne (exception) ; icônes ≈ 24 px à confirmer</td></tr>
+      <tr><td>3.2.6 Aide cohérente</td><td class="pass">Non applicable (pas de mécanisme d'aide)</td></tr>
+      <tr><td>3.3.7 Saisie redondante</td><td class="pass">Non applicable</td></tr>
+      <tr><td>3.3.8 Authentification accessible (minimum)</td><td class="pass">Non applicable (pas d'authentification)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>9. Corrections prioritaires</h2>
+  <ul>
+    <li><strong>D'abord (critique) :</strong> associer un <code>&lt;label&gt;</code> à chaque champ e-mail (①) et donner un <code>aria-label</code> à chaque lien social (②). Ces deux corrections débloquent l'usage au lecteur d'écran.</li>
+    <li><strong>Ensuite (majeur) :</strong> envelopper le contenu dans <code>&lt;main&gt;</code> + ajouter un lien d'évitement (④, ⑤) ; corriger la hiérarchie des titres (⑥) ; relever les contrastes du pied de page (③) ; transmettre correctement l'état désactivé du bouton (⑦).</li>
+    <li><strong>Pour finir (mineur) :</strong> <code>alt</code> pertinents (⑧), <code>aria-hidden</code> sur les icônes décoratives (⑨), <code>id</code> uniques (⑩), vraies destinations de liens (⑪), validation native de secours (⑫), voile de contraste garanti (⑬), métadonnées (⑭).</li>
+  </ul>
+  <p class="note">Le détail technique des corrections (fichier source, extrait avant/après en Pug, SCSS et ARIA) figure dans le document compagnon <strong>plan-corrections.md</strong>.</p>
+</section>
+
+</div>
+</body>
+</html>

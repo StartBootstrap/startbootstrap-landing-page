@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit accessibilité — Avant / Après (WCAG 2.2 AA)</title>
+<style>
+  :root{
+    --bg:#fff;--surface:#f6f8fa;--ink:#1a1f24;--muted:#586069;--line:#e1e4e8;
+    --before:#e11d48;--after:#16a34a;--before-bg:#fdeaee;--after-bg:#e7f6ec;--maj:#d97706;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.65;background:var(--bg)}
+  .wrap{max-width:1040px;margin:0 auto;padding:48px 28px 80px}
+  header.doc{border-bottom:3px solid var(--ink);padding-bottom:24px;margin-bottom:36px}
+  h1{font-size:30px;margin:0 0 6px;line-height:1.25}
+  h2{font-size:22px;margin:48px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h3{font-size:16px;margin:26px 0 8px}
+  .sub{color:var(--muted);font-size:15px;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:13px}
+  /* scorecard */
+  .score{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin:26px 0}
+  .score .box{border:1px solid var(--line);border-radius:12px;padding:22px;text-align:center}
+  .score .box.b{border-color:var(--before);background:var(--before-bg)}
+  .score .box.a{border-color:var(--after);background:var(--after-bg)}
+  .score .box .n{font-size:46px;font-weight:800;line-height:1}
+  .score .box.b .n{color:var(--before)} .score .box.a .n{color:var(--after)}
+  .score .box .l{font-size:13px;color:var(--muted);margin-top:8px;text-transform:uppercase;letter-spacing:.04em}
+  .score .arrow{font-size:34px;color:var(--muted)}
+  /* tables */
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--surface);font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  code{background:var(--surface);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px}
+  .tag.b{background:var(--before-bg);color:var(--before)} .tag.a{background:var(--after-bg);color:var(--after)}
+  .pass{color:var(--after);font-weight:700}.fail{color:var(--before);font-weight:700}
+  /* issue diff blocks */
+  .diff{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:14px 0}
+  .diff .head{padding:12px 16px;background:var(--surface);border-bottom:1px solid var(--line);font-weight:700;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+  .diff .head .wcag{font-weight:400;font-size:12px;color:var(--muted)}
+  .diff .cols{display:grid;grid-template-columns:1fr 1fr}
+  .diff .col{padding:14px 16px;font-size:13px}
+  .diff .col.before{border-right:1px solid var(--line)}
+  .diff .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+  .diff .col.before .lbl{color:var(--before)} .diff .col.after .lbl{color:var(--after)}
+  pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.5;background:var(--surface);padding:10px 12px;border-radius:6px}
+  /* visual compare */
+  .vis{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+  figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+  figure img{display:block;width:100%}
+  figcaption{padding:9px 14px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+  figure.b figcaption{color:var(--before)} figure.a figcaption{color:var(--after)}
+  .note{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:14px;color:var(--muted)}
+  .langbar{display:flex;justify-content:flex-end;gap:6px;margin-bottom:8px}
+  .langbar a{text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-size:13px}
+  .langbar a[aria-current="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  @media(max-width:760px){.diff .cols,.vis,.score{grid-template-columns:1fr}.diff .col.before{border-right:0;border-bottom:1px solid var(--line)}.score .arrow{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar"><a href="audit-avant-apres.html" aria-current="true" lang="fr">FR</a><a href="audit-avant-apres.en.html" lang="en" hreflang="en">EN</a></div>
+
+<header class="doc">
+  <h1>Audit accessibilité — Avant / Après</h1>
+  <p class="sub">Thème « Start Bootstrap – Landing Page » · corrections appliquées aux sources puis recompilées</p>
+  <div class="meta">
+    <span class="chip"><strong>Référentiel :</strong> WCAG 2.2 niveau AA</span>
+    <span class="chip"><strong>Date :</strong> 6 juin 2026</span>
+    <span class="chip"><strong>Méthode :</strong> axe-core + revue de code + calcul de contraste</span>
+  </div>
+</header>
+
+<section>
+  <h2>1. Bilan</h2>
+  <div class="score">
+    <div class="box b"><div class="n">5</div><div class="l">Violations axe — avant</div></div>
+    <div class="arrow">→</div>
+    <div class="box a"><div class="n">0</div><div class="l">Violations axe — après</div></div>
+  </div>
+  <p>Les <strong>14 problèmes</strong> de l'audit initial ont été corrigés dans les sources Pug/SCSS, puis le projet a été rebuildé. Le scan automatisé ne relève plus aucune violation, et les 7 mesures de contraste passent désormais le seuil AA.</p>
+  <div class="note"><strong>Captures :</strong> les icônes proviennent d'un CDN non joignable depuis l'environnement de capture, elles apparaissent vides — sans incidence sur les constats, établis à partir du code.</div>
+</section>
+
+<section>
+  <h2>2. Synthèse des indicateurs</h2>
+  <table>
+    <thead><tr><th>Indicateur</th><th>Avant</th><th>Après</th></tr></thead>
+    <tbody>
+      <tr><td>Violations axe-core</td><td><span class="tag b">5</span></td><td><span class="tag a">0</span></td></tr>
+      <tr><td><code>&lt;label&gt;</code> de formulaire</td><td class="fail">0</td><td class="pass">2</td></tr>
+      <tr><td>Landmark <code>&lt;main&gt;</code></td><td class="fail">absent</td><td class="pass">présent</td></tr>
+      <tr><td>Lien d'évitement</td><td class="fail">absent</td><td class="pass">présent</td></tr>
+      <tr><td>Liens à nom accessible (<code>aria-label</code>)</td><td class="fail">0</td><td class="pass">6</td></tr>
+      <tr><td>Icônes masquées (<code>aria-hidden</code>)</td><td class="fail">0</td><td class="pass">6</td></tr>
+      <tr><td>Boutons réellement désactivés</td><td class="fail">0 (classe seule)</td><td class="pass">2 (attribut)</td></tr>
+      <tr><td><code>alt="..."</code> non pertinents</td><td class="fail">3</td><td class="pass">0</td></tr>
+      <tr><td>Liens factices <code>href="#!"</code></td><td class="fail">8</td><td class="pass">0</td></tr>
+      <tr><td>Identifiants <code>id</code> dupliqués</td><td class="fail">3</td><td class="pass">0</td></tr>
+      <tr><td>Hiérarchie des titres</td><td class="fail">h1 → h3 (saut)</td><td class="pass">h1 → h2 → h3</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>3. Contrastes — avant / après</h2>
+  <table>
+    <thead><tr><th>Élément</th><th>Avant</th><th>Après</th><th>Requis</th></tr></thead>
+    <tbody>
+      <tr><td>Liens du pied de page</td><td class="fail">4,27:1 ✗</td><td class="pass">6,11:1 ✓</td><td>4,5:1</td></tr>
+      <tr><td>Copyright (<code>.text-muted</code>)</td><td class="fail">4,45:1 ✗</td><td class="pass">6,84:1 ✓</td><td>4,5:1</td></tr>
+      <tr><td>Bouton primaire (libellé)</td><td>4,50:1</td><td>4,50:1</td><td>4,5:1</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Le bouton primaire reste pile au seuil (4,50:1) : conforme mais sans marge. À surveiller si la teinte évolue.</p>
+</section>
+
+<section>
+  <h2>4. Détail des corrections (code avant / après)</h2>
+
+  <div class="diff">
+    <div class="head"><span>① Champs e-mail sans étiquette</span><span class="wcag">WCAG 1.3.1 · 3.3.2 · 4.1.2</span></div>
+    <div class="cols">
+      <div class="col before"><div class="lbl">Avant</div><pre>input#emailAddress.form-control(
+  type='email'
+  placeholder='Email Address')</pre></div>
+      <div class="col after"><div class="lbl">Après</div><pre>label.visually-hidden(for='emailAddress') Email address
+input#emailAddress.form-control(
+  type='email' placeholder='Email Address'
+  required autocomplete='email')</pre></div>
+    </div>
+  </div>
+
+  <div class="diff">
+    <div class="head"><span>② Liens sociaux sans nom accessible</span><span class="wcag">WCAG 2.4.4 · 4.1.2</span></div>
+    <div class="cols">
+      <div class="col before"><div class="lbl">Avant</div><pre>a(href='#!')
+  i.bi-facebook.fs-3</pre></div>
+      <div class="col after"><div class="lbl">Après</div><pre>a(href='#' aria-label='Facebook' rel='noopener')
+  i.bi-facebook.fs-3(aria-hidden='true')</pre></div>
+    </div>
+  </div>
+
+  <div class="diff">
+    <div class="head"><span>③ Contraste du pied de page</span><span class="wcag">WCAG 1.4.3</span></div>
+    <div class="cols">
+      <div class="col before"><div class="lbl">Avant (Bootstrap par défaut)</div><pre>a   → #0d6efd  (4,27:1 ✗)
+.text-muted → #6c757d (4,45:1 ✗)</pre></div>
+      <div class="col after"><div class="lbl">Après (_footer.scss)</div><pre>footer.footer a { color:#0a58ca; }      /* 6,1:1 */
+footer.footer .text-muted{ color:#515860;} /* 6,8:1 */</pre></div>
+    </div>
+  </div>
+
+  <div class="diff">
+    <div class="head"><span>④ + ⑤ Landmark principal &amp; lien d'évitement</span><span class="wcag">WCAG 1.3.1 · 2.4.1</span></div>
+    <div class="cols">
+      <div class="col before"><div class="lbl">Avant</div><pre>body
+  nav.navbar...
+  header.masthead...
+  section...        (aucun &lt;main&gt;, aucun saut)</pre></div>
+      <div class="col after"><div class="lbl">Après</div><pre>body
+  a.skip-link(href='#main') Skip to main content
+  nav.navbar...
+  main#main
+    header.masthead...
+    section...</pre></div>
+    </div>
+  </div>
+
+  <div class="diff">
+    <div class="head"><span>⑥ Hiérarchie des titres</span><span class="wcag">WCAG 1.3.1</span></div>
+    <div class="cols">
+      <div class="col before"><div class="lbl">Avant</div><pre>h1 → h3 h3 h3 → h2 h2 h2 → h2 + h5 h5 h5</pre></div>
+      <div class="col after"><div class="lbl">Après</div><pre>h1 → h2 h2 h2 → h2 h2 h2 → h2 + h3 h3 h3</pre></div>
+    </div>
+  </div>
+
+  <div class="diff">
+    <div class="head"><span>⑦ Bouton « Submit » désactivé</span><span class="wcag">WCAG 4.1.2 · 1.4.3</span></div>
+    <div class="cols">
+      <div class="col before"><div class="lbl">Avant</div><pre>button#submitButton.btn.disabled(type='submit') Submit</pre></div>
+      <div class="col after"><div class="lbl">Après</div><pre>button#submitButton.btn(type='submit' disabled) Submit</pre></div>
+    </div>
+  </div>
+
+  <div class="diff">
+    <div class="head"><span>⑧ ⑨ ⑩ ⑪ ⑭ Corrections mineures</span><span class="wcag">WCAG 1.1.1 · 2.4.4 · bonne pratique</span></div>
+    <div class="cols">
+      <div class="col before"><div class="lbl">Avant</div><pre>img(alt='...')                 /* lu "points de suspension" */
+i.bi-window                    /* icône non masquée */
+id en double (3×)
+href='#!'  (8×)
+meta description vide</pre></div>
+      <div class="col after"><div class="lbl">Après</div><pre>img(alt='')                    /* image décorative */
+i.bi-window(aria-hidden='true')
+id uniques (…Footer)
+href='#'   + role/aria-label showcase
+meta description renseignée</pre></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>5. Comparaison visuelle</h2>
+
+  <h3>Pied de page — contraste des liens</h3>
+  <div class="vis">
+    <figure class="b"><img src="screenshots/07-footer.png" alt="Pied de page avant : liens bleu clair faible contraste"><figcaption>Avant — liens 4,27:1, copyright 4,45:1 (échec)</figcaption></figure>
+    <figure class="a"><img src="screenshots/fix-footer.png" alt="Pied de page après : liens bleu plus sombre"><figcaption>Après — liens 6,11:1, copyright 6,84:1 (conforme)</figcaption></figure>
+  </div>
+
+  <h3>Lien d'évitement (nouveau)</h3>
+  <div class="vis">
+    <figure class="b"><img src="screenshots/01-navbar.png" alt="Barre de navigation avant, sans lien d'évitement"><figcaption>Avant — aucun moyen de sauter la navigation</figcaption></figure>
+    <figure class="a"><img src="screenshots/fix-skip-link.png" alt="Lien Skip to main content visible au focus clavier"><figcaption>Après — « Skip to main content » apparaît au premier Tab</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>6. Validation finale &amp; points de personnalisation</h2>
+  <p>Un scan automatisé ne couvre qu'une partie des critères WCAG ; le test au lecteur d'écran a été réalisé en complément.</p>
+  <table>
+    <tbody>
+      <tr><td>Test au lecteur d'écran (VoiceOver) — parcours complet</td><td><span class="tag a">✓ Validé — texte affiché et annoncé identiques</span></td></tr>
+      <tr><td>Surveiller le bouton primaire (4,50:1, sans marge)</td><td><span class="tag b">À surveiller</span></td></tr>
+    </tbody>
+  </table>
+  <div class="note"><strong>À la charge du développeur qui réutilise ce template :</strong> renseigner de vraies destinations pour les liens (actuellement <code>#</code>) et adapter l'attribut <code>lang</code> (ainsi que la traduction des contenus) selon l'audience visée. Ces points relèvent de la personnalisation du contenu, pas de l'accessibilité du template lui-même.</div>
+</section>
+
+</div>
+</body>
+</html>
